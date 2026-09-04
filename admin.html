@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+
+        name="viewport"
+
+        content="width=device-width, initial-scale=1.0"
+
+    >
+
+    <title>Administration | NINICE BOUTIQUE</title>
+
+    <meta
+
+        name="description"
+
+        content="Administration sécurisée de NINICE BOUTIQUE."
+
+    >
+
+    <meta
+
+        name="theme-color"
+
+        content="#6d28d9"
+
+    >
+
+    <link
+
+        rel="preconnect"
+
+        href="https://fonts.googleapis.com"
+
+    >
+
+    <link
+
+        rel="preconnect"
+
+        href="https://fonts.gstatic.com"
+
+        crossorigin
+
+    >
+
+    <link
+
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+
+        rel="stylesheet"
+
+    >
+
+    <style>
+
+        :root {
+
+            --violet: #6d28d9;
+
+            --violet-dark: #4c1d95;
+
+            --violet-light: #f3e8ff;
+
+            --soft: #faf7ff;
+
+            --white: #ffffff;
+
+            --black: #17151c;
+
+            --text: #27232d;
+
+            --muted: #77727f;
+
+            --border: #e8e3ed;
+
+            --danger: #c62828;
+
+            --shadow:
+
+                0 20px 60px
+
+                rgba(76, 29, 149, 0.10);
+
+        }
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+
+                "DM Sans",
+
+                sans-serif;
+
+            color: var(--text);
+
+            background:
+
+                linear-gradient(
+
+                    135deg,
+
+                    #faf7ff 0%,
+
+                    #ffffff 50%,
+
+                    #f7f0ff 100%
+
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 25px;
+
+        }
+
+        .page {
+
+            width: 100%;
+
+            max-width: 1050px;
+
+            min-height: 620px;
+
+            background: var(--white);
+
+            border:
+
+                1px solid
+
+                var(--border);
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            display: grid;
+
+            grid-template-columns:
+
+                1fr 1fr;
+
+            box-shadow:
+
+                var(--shadow);
+
+        }
+
+        /* ==============================
+
+           LEFT
+
+        ============================== */
+
+        .presentation {
+
+            position: relative;
+
+            padding: 55px;
+
+            background:
+
+                linear-gradient(
+
+                    145deg,
+
+                    #6d28d9,
+
+                    #4c1d95
+
+                );
+
+            color: white;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            overflow: hidden;
+
+        }
+
+        .presentation::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+
+            height: 300px;
+
+            border-radius: 50%;
+
+            border:
+
+                1px solid
+
+                rgba(
+
+                    255,
+
+                    255,
+
+                    255,
+
+                    0.15
+
+                );
+
+            top: -100px;
+
+            right: -100px;
+
+        }
+
+        .presentation::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+
+            height: 220px;
+
+            border-radius: 50%;
+
+            border:
+
+                1px solid
+
+                rgba(
+
+                    255,
+
+                    255,
+
+                    255,
+
+                    0.12
+
+                );
+
+            bottom: -90px;
+
+            left: -80px;
+
+        }
+
+        .brand {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+        .brand-mark {
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 14px;
+
+            background:
+
+                rgba(
+
+                    255,
+
+                    255,
+
+                    255,
+
+                    0.16
+
+                );
+
+            display: grid;
+
+            place-items: center;
+
+            border:
+
+                1px solid
+
+                rgba(
+
+                    255,
+
+                    255,
+
+                    255,
+
+                    0.18
+
+                );
+
+        }
+
+        .brand-mark svg {
+
+            width: 28px;
+
+            height: 28px;
+
+        }
+
+        .brand-name {
+
+            display: flex;
+
+            flex-direction: column;
+
+            line-height: 1;
+
+        }
+
+        .brand-name strong {
+
+            font-size: 20px;
+
+            letter-spacing: 1.5px;
+
+        }
+
+        .brand-name span {
+
+            margin-top: 5px;
+
+            font-size: 8px;
+
+            letter-spacing: 3px;
+
+            font-weight: 700;
+
+            opacity: 0.85;
+
+        }
+
+        .presentation-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 420px;
+
+        }
+
+        .presentation-content .eyebrow {
+
+            font-size: 11px;
+
+            text-transform:
+
+                uppercase;
+
+            letter-spacing:
+
+                2px;
+
+            font-weight: 700;
+
+            opacity: 0.75;
+
+            margin-bottom: 18px;
+
+        }
+
+        .presentation-content h1 {
+
+            font-family:
+
+                "Playfair Display",
+
+                serif;
+
+            font-size:
+
+                clamp(
+
+                    38px,
+
+                    4vw,
+
+                    54px
+
+                );
+
+            line-height: 1.08;
+
+            margin-bottom: 20px;
+
+        }
+
+        .presentation-content p {
+
+            color:
+
+                rgba(
+
+                    255,
+
+                    255,
+
+                    255,
+
+                    0.76
+
+                );
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            max-width: 380px;
+
+        }
+
+        .presentation-footer {
+
+            position: relative;
+
+            z-index: 2;
+
+            color:
+
+                rgba(
+
+                    255,
+
+                    255,
+
+                    255,
+
+                    0.60
+
+                );
+
+            font-size: 11px;
+
+        }
+
+        /* ==============================
+
+           LOGIN
+
+        ============================== */
+
+        .login-area {
+
+            padding:
+
+                55px;
+
+            display:
+
+                flex;
+
+            align-items:
+
+                center;
+
+            justify-content:
+
+                center;
+
+        }
+
+        .login-box {
+
+            width:
+
+                100%;
+
+            max-width:
+
+                390px;
+
+        }
+
+        .login-heading {
+
+            margin-bottom:
+
+                30px;
+
+        }
+
+        .login-heading h2 {
+
+            font-family:
+
+                "Playfair Display",
+
+                serif;
+
+            color:
+
+                var(--black);
+
+            font-size:
+
+                34px;
+
+            margin-bottom:
+
+                8px;
+
+        }
+
+        .login-heading p {
+
+            color:
+
+                var(--muted);
+
+            font-size:
+
+                13px;
+
+        }
+
+        .form-group {
+
+            margin-bottom:
+
+                18px;
+
+        }
+
+        label {
+
+            display:
+
+                block;
+
+            font-size:
+
+                12px;
+
+            font-weight:
+
+                700;
+
+            color:
+
+                var(--text);
+
+            margin-bottom:
+
+                8px;
+
+        }
+
+        input {
+
+            width:
+
+                100%;
+
+            height:
+
+                50px;
+
+            border:
+
+                1px solid
+
+                var(--border);
+
+            border-radius:
+
+                10px;
+
+            background:
+
+                white;
+
+            color:
+
+                var(--text);
+
+            outline:
+
+                none;
+
+            padding:
+
+                0 14px;
+
+            transition:
+
+                0.2s;
+
+        }
+
+        input::placeholder {
+
+            color:
+
+                #aaa4af;
+
+        }
+
+        input:focus {
+
+            border-color:
+
+                var(--violet);
+
+            box-shadow:
+
+                0 0 0 3px
+
+                rgba(
+
+                    109,
+
+                    40,
+
+                    217,
+
+                    0.08
+
+                );
+
+        }
+
+        .password-wrapper {
+
+            position:
+
+                relative;
+
+        }
+
+        .password-wrapper input {
+
+            padding-right:
+
+                48px;
+
+        }
+
+        .toggle-password {
+
+            position:
+
+                absolute;
+
+            top: 50%;
+
+            right: 8px;
+
+            transform:
+
+                translateY(-50%);
+
+            width: 35px;
+
+            height: 35px;
+
+            border: 0;
+
+            background:
+
+                transparent;
+
+            color:
+
+                var(--muted);
+
+            display:
+
+                grid;
+
+            place-items:
+
+                center;
+
+            border-radius:
+
+                8px;
+
+        }
+
+        .toggle-password:hover {
+
+            background:
+
+                var(--soft);
+
+            color:
+
+                var(--violet);
+
+        }
+
+        .toggle-password svg {
+
+            width:
+
+                18px;
+
+            height:
+
+                18px;
+
+        }
+
+        .login-button {
+
+            width:
+
+                100%;
+
+            height:
+
+                50px;
+
+            margin-top:
+
+                6px;
+
+            border: 0;
+
+            border-radius:
+
+                10px;
+
+            background:
+
+                var(--violet);
+
+            color:
+
+                white;
+
+            font-size:
+
+                13px;
+
+            font-weight:
+
+                700;
+
+            transition:
+
+                0.2s;
+
+        }
+
+        .login-button:hover {
+
+            background:
+
+                var(--violet-dark);
+
+            transform:
+
+                translateY(-1px);
+
+        }
+
+        .login-button:disabled {
+
+            opacity:
+
+                0.65;
+
+            cursor:
+
+                not-allowed;
+
+            transform:
+
+                none;
+
+        }
+
+        .security-note {
+
+            display:
+
+                flex;
+
+            align-items:
+
+                center;
+
+            gap:
+
+                8px;
+
+            margin-top:
+
+                18px;
+
+            padding:
+
+                12px;
+
+            border-radius:
+
+                10px;
+
+            background:
+
+                var(--soft);
+
+            color:
+
+                var(--muted);
+
+            font-size:
+
+                10px;
+
+            line-height:
+
+                1.5;
+
+        }
+
+        .security-note svg {
+
+            width:
+
+                16px;
+
+            height:
+
+                16px;
+
+            flex-shrink:
+
+                0;
+
+            color:
+
+                var(--violet);
+
+        }
+
+        .error-message {
+
+            display:
+
+                none;
+
+            margin-bottom:
+
+                18px;
+
+            padding:
+
+                13px;
+
+            border:
+
+                1px solid
+
+                #f1cccc;
+
+            border-radius:
+
+                10px;
+
+            background:
+
+                #fff8f8;
+
+            color:
+
+                var(--danger);
+
+            font-size:
+
+                12px;
+
+            line-height:
+
+                1.5;
+
+        }
+
+        .error-message.show {
+
+            display:
+
+                block;
+
+        }
+
+        .back-link {
+
+            display:
+
+                inline-flex;
+
+            margin-top:
+
+                25px;
+
+            color:
+
+                var(--muted);
+
+            font-size:
+
+                11px;
+
+            font-weight:
+
+                600;
+
+        }
+
+        .back-link:hover {
+
+            color:
+
+                var(--violet);
+
+        }
+
+        /* ==============================
+
+           RESPONSIVE
+
+        ============================== */
+
+        @media (max-width: 800px) {
+
+            body {
+
+                padding:
+
+                    15px;
+
+            }
+
+            .page {
+
+                grid-template-columns:
+
+                    1fr;
+
+                min-height:
+
+                    auto;
+
+                border-radius:
+
+                    18px;
+
+            }
+
+            .presentation {
+
+                min-height:
+
+                    300px;
+
+                padding:
+
+                    35px 28px;
+
+            }
+
+            .presentation-content {
+
+                margin-top:
+
+                    55px;
+
+            }
+
+            .presentation-content h1 {
+
+                font-size:
+
+                    38px;
+
+            }
+
+            .presentation-footer {
+
+                margin-top:
+
+                    50px;
+
+            }
+
+            .login-area {
+
+                padding:
+
+                    35px 25px 40px;
+
+            }
+
+        }
+
+        @media (max-width: 420px) {
+
+            .presentation {
+
+                padding:
+
+                    28px 22px;
+
+                min-height:
+
+                    270px;
+
+            }
+
+            .brand-mark {
+
+                width:
+
+                    43px;
+
+                height:
+
+                    43px;
+
+            }
+
+            .presentation-content {
+
+                margin-top:
+
+                    40px;
+
+            }
+
+            .presentation-content h1 {
+
+                font-size:
+
+                    34px;
+
+            }
+
+            .login-area {
+
+                padding:
+
+                    30px 20px 35px;
+
+            }
+
+            .login-heading h2 {
+
+                font-size:
+
+                    30px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- =====================================
+
+             PRESENTATION
+
+        ====================================== -->
+
+        <section class="presentation">
+
+            <div class="brand">
+
+                <div class="brand-mark">
+
+                    <svg
+
+                        viewBox="0 0 32 32"
+
+                        fill="none"
+
+                    >
+
+                        <path
+
+                            d="M8 24V8L24 24V8"
+
+                            stroke="currentColor"
+
+                            stroke-width="3"
+
+                            stroke-linecap="round"
+
+                            stroke-linejoin="round"
+
+                        />
+
+                    </svg>
+
+                </div>
+
+                <div class="brand-name">
+
+                    <strong>
+
+                        NINICE
+
+                    </strong>
+
+                    <span>
+
+                        BOUTIQUE
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="presentation-content">
+
+                <div class="eyebrow">
+
+                    Administration privée
+
+                </div>
+
+                <h1>
+
+                    Gérez votre boutique simplement.
+
+                </h1>
+
+                <p>
+
+                    Retrouvez vos produits, vos commandes,
+
+                    vos stocks et les informations essentielles
+
+                    de NINICE BOUTIQUE depuis votre espace
+
+                    d'administration.
+
+                </p>
+
+            </div>
+
+            <div class="presentation-footer">
+
+                Espace réservé à l'administration de la boutique.
+
+            </div>
+
+        </section>
+
+        <!-- =====================================
+
+             LOGIN
+
+        ====================================== -->
+
+        <section class="login-area">
+
+            <div class="login-box">
+
+                <div class="login-heading">
+
+                    <h2>
+
+                        Connexion
+
+                    </h2>
+
+                    <p>
+
+                        Connectez-vous pour accéder à votre espace administrateur.
+
+                    </p>
+
+                </div>
+
+                <div
+
+                    class="error-message"
+
+                    id="errorMessage"
+
+                ></div>
+
+                <form
+
+                    id="loginForm"
+
+                    novalidate
+
+                >
+
+                    <div class="form-group">
+
+                        <label for="email">
+
+                            Adresse e-mail
+
+                        </label>
+
+                        <input
+
+                            type="email"
+
+                            id="email"
+
+                            name="email"
+
+                            placeholder="Votre adresse e-mail"
+
+                            autocomplete="email"
+
+                            required
+
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="password">
+
+                            Mot de passe
+
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+
+                                type="password"
+
+                                id="password"
+
+                                name="password"
+
+                                placeholder="Votre mot de passe"
+
+                                autocomplete="current-password"
+
+                                required
+
+                            >
+
+                            <button
+
+                                type="button"
+
+                                class="toggle-password"
+
+                                id="togglePassword"
+
+                                aria-label="Afficher le mot de passe"
+
+                            >
+
+                                <svg
+
+                                    id="eyeIcon"
+
+                                    viewBox="0 0 24 24"
+
+                                    fill="none"
+
+                                    stroke="currentColor"
+
+                                    stroke-width="1.8"
+
+                                >
+
+                                    <path
+
+                                        d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"
+
+                                    />
+
+                                    <circle
+
+                                        cx="12"
+
+                                        cy="12"
+
+                                        r="2.5"
+
+                                    />
+
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <button
+
+                        type="submit"
+
+                        class="login-button"
+
+                        id="loginButton"
+
+                    >
+
+                        Se connecter
+
+                    </button>
+
+                    <div class="security-note">
+
+                        <svg
+
+                            viewBox="0 0 24 24"
+
+                            fill="none"
+
+                            stroke="currentColor"
+
+                            stroke-width="1.8"
+
+                        >
+
+                            <rect
+
+                                x="5"
+
+                                y="10"
+
+                                width="14"
+
+                                height="10"
+
+                                rx="2"
+
+                            />
+
+                            <path
+
+                                d="M8 10V7a4 4 0 0 1 8 0v3"
+
+                            />
+
+                        </svg>
+
+                        <span>
+
+                            Connexion protégée par Supabase Authentication.
+
+                        </span>
+
+                    </div>
+
+                </form>
+
+                <a
+
+                    href="index.html"
+
+                    class="back-link"
+
+                >
+
+                    Retour à NINICE BOUTIQUE
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script>
+
+        /* =====================================
+
+           SUPABASE
+
+        ====================================== */
+
+        const SUPABASE_URL =
+
+            "https://etgkyndycareboaurrtx.supabase.co";
+
+        const SUPABASE_ANON_KEY =
+
+            "sb_publishable_aP15ikBeGVbV5xzOeBlw_BVytxavt";
+
+        /* =====================================
+
+           ELEMENTS
+
+        ====================================== */
+
+        const loginForm =
+
+            document.getElementById(
+
+                "loginForm"
+
+            );
+
+        const emailInput =
+
+            document.getElementById(
+
+                "email"
+
+            );
+
+        const passwordInput =
+
+            document.getElementById(
+
+                "password"
+
+            );
+
+        const loginButton =
+
+            document.getElementById(
+
+                "loginButton"
+
+            );
+
+        const errorMessage =
+
+            document.getElementById(
+
+                "errorMessage"
+
+            );
+
+        const togglePassword =
+
+            document.getElementById(
+
+                "togglePassword"
+
+            );
+
+        /* =====================================
+
+           ERROR
+
+        ====================================== */
+
+        function showError(
+
+            message
+
+        ) {
+
+            errorMessage.textContent =
+
+                message;
+
+            errorMessage.classList.add(
+
+                "show"
+
+            );
+
+        }
+
+        function hideError() {
+
+            errorMessage.textContent =
+
+                "";
+
+            errorMessage.classList.remove(
+
+                "show"
+
+            );
+
+        }
+
+        /* =====================================
+
+           PASSWORD VISIBILITY
+
+        ====================================== */
+
+        togglePassword.addEventListener(
+
+            "click",
+
+            () => {
+
+                const isPassword =
+
+                    passwordInput.type ===
+
+                    "password";
+
+                passwordInput.type =
+
+                    isPassword
+
+                        ? "text"
+
+                        : "password";
+
+                togglePassword.setAttribute(
+
+                    "aria-label",
+
+                    isPassword
+
+                        ? "Masquer le mot de passe"
+
+                        : "Afficher le mot de passe"
+
+                );
+
+            }
+
+        );
+
+        /* =====================================
+
+           SUPABASE AUTH
+
+        ====================================== */
+
+        async function signIn(
+
+            email,
+
+            password
+
+        ) {
+
+            const response =
+
+                await fetch(
+
+                    `${SUPABASE_URL}/auth/v1/token?grant_type=password`,
+
+                    {
+
+                        method:
+
+                            "POST",
+
+                        headers: {
+
+                            "apikey":
+
+                                SUPABASE_ANON_KEY,
+
+                            "Content-Type":
+
+                                "application/json"
+
+                        },
+
+                        body:
+
+                            JSON.stringify({
+
+                                email:
+
+                                    email,
+
+                                password:
+
+                                    password
+
+                            })
+
+                    }
+
+                );
+
+            const data =
+
+                await response.json();
+
+            if (!response.ok) {
+
+                throw new Error(
+
+                    data?.error_description ||
+
+                    data?.msg ||
+
+                    "Identifiants incorrects."
+
+                );
+
+            }
+
+            return data;
+
+        }
+
+        /* =====================================
+
+           VERIFY ADMIN
+
+        ====================================== */
+
+        async function verifyAdmin(
+
+            accessToken
+
+        ) {
+
+            const response =
+
+                await fetch(
+
+                    `${SUPABASE_URL}/rest/v1/admin_users?select=id,role&id=eq.f21920e5-7c89-4f65-87fa-e6d5b210ec16`,
+
+                    {
+
+                        method:
+
+                            "GET",
+
+                        headers: {
+
+                            "apikey":
+
+                                SUPABASE_ANON_KEY,
+
+                            "Authorization":
+
+                                `Bearer ${accessToken}`
+
+                        }
+
+                    }
+
+                );
+
+            if (!response.ok) {
+
+                return false;
+
+            }
+
+            const data =
+
+                await response.json();
+
+            return (
+
+                Array.isArray(data) &&
+
+                data.length > 0 &&
+
+                data[0].role === "admin"
+
+            );
+
+        }
+
+        /* =====================================
+
+           LOGIN
+
+        ====================================== */
+
+        loginForm.addEventListener(
+
+            "submit",
+
+            async event => {
+
+                event.preventDefault();
+
+                hideError();
+
+                const email =
+
+                    emailInput.value.trim();
+
+                const password =
+
+                    passwordInput.value;
+
+                if (!email) {
+
+                    showError(
+
+                        "Veuillez renseigner votre adresse e-mail."
+
+                    );
+
+                    emailInput.focus();
+
+                    return;
+
+                }
+
+                if (!password) {
+
+                    showError(
+
+                        "Veuillez renseigner votre mot de passe."
+
+                    );
+
+                    passwordInput.focus();
+
+                    return;
+
+                }
+
+                loginButton.disabled =
+
+                    true;
+
+                loginButton.textContent =
+
+                    "Connexion en cours...";
+
+                try {
+
+                    const auth =
+
+                        await signIn(
+
+                            email,
+
+                            password
+
+                        );
+
+                    const accessToken =
+
+                        auth.access_token;
+
+                    const refreshToken =
+
+                        auth.refresh_token;
+
+                    if (!accessToken) {
+
+                        throw new Error(
+
+                            "La connexion n'a pas pu être établie."
+
+                        );
+
+                    }
+
+                    const isAdmin =
+
+                        await verifyAdmin(
+
+                            accessToken
+
+                        );
+
+                    if (!isAdmin) {
+
+                        throw new Error(
+
+                            "Ce compte ne possède pas les droits administrateur."
+
+                        );
+
+                    }
+
+                    localStorage.setItem(
+
+                        "ninice_admin_access_token",
+
+                        accessToken
+
+                    );
+
+                    if (refreshToken) {
+
+                        localStorage.setItem(
+
+                            "ninice_admin_refresh_token",
+
+                            refreshToken
+
+                        );
+
+                    }
+
+                    localStorage.setItem(
+
+                        "ninice_admin_email",
+
+                        email
+
+                    );
+
+                    window.location.href =
+
+                        "admin-dashboard.html";
+
+                } catch (error) {
+
+                    console.error(
+
+                        error
+
+                    );
+
+                    showError(
+
+                        error.message ||
+
+                        "Impossible de vous connecter."
+
+                    );
+
+                } finally {
+
+                    loginButton.disabled =
+
+                        false;
+
+                    loginButton.textContent =
+
+                        "Se connecter";
+
+                }
+
+            }
+
+        );
+
+        /* =====================================
+
+           CHECK EXISTING SESSION
+
+        ====================================== */
+
+        async function checkExistingSession() {
+
+            const accessToken =
+
+                localStorage.getItem(
+
+                    "ninice_admin_access_token"
+
+                );
+
+            if (!accessToken) {
+
+                return;
+
+            }
+
+            try {
+
+                const isAdmin =
+
+                    await verifyAdmin(
+
+                        accessToken
+
+                    );
+
+                if (isAdmin) {
+
+                    window.location.href =
+
+                        "admin-dashboard.html";
+
+                } else {
+
+                    localStorage.removeItem(
+
+                        "ninice_admin_access_token"
+
+                    );
+
+                    localStorage.removeItem(
+
+                        "ninice_admin_refresh_token"
+
+                    );
+
+                    localStorage.removeItem(
+
+                        "ninice_admin_email"
+
+                    );
+
+                }
+
+            } catch {
+
+                localStorage.removeItem(
+
+                    "ninice_admin_access_token"
+
+                );
+
+            }
+
+        }
+
+        checkExistingSession();
+
+    </script>
+
+</body>
+
+</html>
