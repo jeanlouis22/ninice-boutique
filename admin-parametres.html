@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paramètres | NINICE BOUTIQUE</title>
+
+    <meta name="theme-color" content="#6d28d9">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+
+            --violet: #6d28d9;
+
+            --violet-dark: #4c1d95;
+
+            --violet-light: #f3e8ff;
+
+            --violet-soft: #faf7ff;
+
+            --white: #ffffff;
+
+            --black: #18181b;
+
+            --gray-900: #27272a;
+
+            --gray-700: #3f3f46;
+
+            --gray-600: #52525b;
+
+            --gray-500: #71717a;
+
+            --gray-400: #a1a1aa;
+
+            --gray-300: #d4d4d8;
+
+            --gray-200: #e4e4e7;
+
+            --gray-100: #f4f4f5;
+
+            --green: #15803d;
+
+            --red: #dc2626;
+
+            --shadow: 0 10px 35px rgba(76, 29, 149, 0.08);
+
+            --radius: 18px;
+
+        }
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        body {
+
+            font-family: "DM Sans", sans-serif;
+
+            background: var(--violet-soft);
+
+            color: var(--black);
+
+            min-height: 100vh;
+
+        }
+
+        button,
+
+        input,
+
+        textarea {
+
+            font: inherit;
+
+        }
+
+        button {
+
+            cursor: pointer;
+
+        }
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+        .app {
+
+            min-height: 100vh;
+
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 260px;
+
+            height: 100vh;
+
+            background: var(--white);
+
+            border-right: 1px solid var(--gray-200);
+
+            z-index: 1000;
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+        .brand {
+
+            height: 82px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            padding: 0 24px;
+
+            border-bottom: 1px solid var(--gray-200);
+
+        }
+
+        .brand-mark {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 12px;
+
+            background: var(--violet);
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+        }
+
+        .brand-text {
+
+            line-height: 1;
+
+        }
+
+        .brand-name {
+
+            font-weight: 700;
+
+            font-size: 17px;
+
+            letter-spacing: 1.4px;
+
+        }
+
+        .brand-sub {
+
+            margin-top: 4px;
+
+            color: var(--gray-500);
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+        .nav {
+
+            padding: 22px 14px;
+
+            flex: 1;
+
+        }
+
+        .nav-title {
+
+            padding: 0 12px 10px;
+
+            color: var(--gray-400);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+        }
+
+        .nav a {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 12px 13px;
+
+            margin-bottom: 5px;
+
+            border-radius: 11px;
+
+            color: var(--gray-600);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.2s ease;
+
+        }
+
+        .nav a:hover {
+
+            background: var(--violet-soft);
+
+            color: var(--violet);
+
+        }
+
+        .nav a.active {
+
+            background: var(--violet-light);
+
+            color: var(--violet-dark);
+
+        }
+
+        .nav-icon {
+
+            width: 20px;
+
+            height: 20px;
+
+            flex: 0 0 20px;
+
+        }
+
+        .sidebar-bottom {
+
+            padding: 16px 14px 20px;
+
+            border-top: 1px solid var(--gray-200);
+
+        }
+
+        .logout-btn {
+
+            width: 100%;
+
+            border: 1px solid var(--gray-200);
+
+            background: white;
+
+            color: var(--gray-700);
+
+            border-radius: 11px;
+
+            padding: 11px 13px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-weight: 600;
+
+        }
+
+        .logout-btn:hover {
+
+            border-color: #fecaca;
+
+            color: var(--red);
+
+            background: #fff7f7;
+
+        }
+
+        /* MAIN */
+
+        .main {
+
+            margin-left: 260px;
+
+            min-height: 100vh;
+
+        }
+
+        .topbar {
+
+            height: 82px;
+
+            background: rgba(255,255,255,0.94);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid var(--gray-200);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 34px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+        }
+
+        .topbar-left h1 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 25px;
+
+            color: var(--gray-900);
+
+        }
+
+        .topbar-left p {
+
+            color: var(--gray-500);
+
+            font-size: 13px;
+
+            margin-top: 3px;
+
+        }
+
+        .topbar-actions {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+        .btn {
+
+            border: 0;
+
+            border-radius: 11px;
+
+            padding: 11px 16px;
+
+            font-weight: 700;
+
+            font-size: 13px;
+
+            transition: 0.2s ease;
+
+        }
+
+        .btn-secondary {
+
+            background: white;
+
+            color: var(--gray-700);
+
+            border: 1px solid var(--gray-200);
+
+        }
+
+        .btn-secondary:hover {
+
+            border-color: var(--violet);
+
+            color: var(--violet);
+
+        }
+
+        .btn-primary {
+
+            background: var(--violet);
+
+            color: white;
+
+            box-shadow: 0 6px 18px rgba(109,40,217,0.2);
+
+        }
+
+        .btn-primary:hover {
+
+            background: var(--violet-dark);
+
+            transform: translateY(-1px);
+
+        }
+
+        .content {
+
+            padding: 30px 34px 80px;
+
+            max-width: 1150px;
+
+        }
+
+        /* SETTINGS */
+
+        .settings-grid {
+
+            display: grid;
+
+            grid-template-columns: minmax(0, 1fr) 330px;
+
+            gap: 22px;
+
+            align-items: start;
+
+        }
+
+        .card {
+
+            background: white;
+
+            border: 1px solid var(--gray-200);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+
+        }
+
+        .card-header {
+
+            padding: 22px 24px;
+
+            border-bottom: 1px solid var(--gray-200);
+
+        }
+
+        .card-header h2 {
+
+            font-size: 17px;
+
+            color: var(--gray-900);
+
+        }
+
+        .card-header p {
+
+            margin-top: 5px;
+
+            color: var(--gray-500);
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+        }
+
+        .card-body {
+
+            padding: 24px;
+
+        }
+
+        .form-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+
+        }
+
+        .form-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+        }
+
+        .form-group.full {
+
+            grid-column: 1 / -1;
+
+        }
+
+        label {
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: var(--gray-700);
+
+        }
+
+        .required {
+
+            color: var(--violet);
+
+        }
+
+        input,
+
+        textarea {
+
+            width: 100%;
+
+            border: 1px solid var(--gray-300);
+
+            border-radius: 11px;
+
+            padding: 12px 13px;
+
+            outline: none;
+
+            color: var(--gray-900);
+
+            background: white;
+
+            transition: 0.2s ease;
+
+        }
+
+        input:focus,
+
+        textarea:focus {
+
+            border-color: var(--violet);
+
+            box-shadow: 0 0 0 3px rgba(109,40,217,0.09);
+
+        }
+
+        textarea {
+
+            min-height: 105px;
+
+            resize: vertical;
+
+        }
+
+        .field-help {
+
+            color: var(--gray-500);
+
+            font-size: 11px;
+
+            line-height: 1.45;
+
+        }
+
+        .card-footer {
+
+            border-top: 1px solid var(--gray-200);
+
+            padding: 18px 24px;
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 10px;
+
+        }
+
+        /* SIDE INFO */
+
+        .info-card {
+
+            padding: 24px;
+
+        }
+
+        .info-title {
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            color: var(--gray-900);
+
+            margin-bottom: 16px;
+
+        }
+
+        .info-item {
+
+            padding: 14px 0;
+
+            border-bottom: 1px solid var(--gray-100);
+
+        }
+
+        .info-item:last-child {
+
+            border-bottom: 0;
+
+        }
+
+        .info-label {
+
+            color: var(--gray-500);
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.7px;
+
+            font-weight: 700;
+
+            margin-bottom: 5px;
+
+        }
+
+        .info-value {
+
+            color: var(--gray-800);
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+        }
+
+        .notice {
+
+            margin-top: 18px;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            background: var(--violet-soft);
+
+            border: 1px solid #eadcff;
+
+            color: var(--violet-dark);
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+        }
+
+        /* LOADING */
+
+        .loading {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 300px;
+
+            color: var(--gray-500);
+
+            font-size: 14px;
+
+        }
+
+        .spinner {
+
+            width: 18px;
+
+            height: 18px;
+
+            border: 2px solid var(--gray-200);
+
+            border-top-color: var(--violet);
+
+            border-radius: 50%;
+
+            animation: spin 0.7s linear infinite;
+
+            margin-right: 10px;
+
+        }
+
+        @keyframes spin {
+
+            to {
+
+                transform: rotate(360deg);
+
+            }
+
+        }
+
+        /* TOAST */
+
+        .toast-container {
+
+            position: fixed;
+
+            top: 20px;
+
+            right: 20px;
+
+            z-index: 5000;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+        }
+
+        .toast {
+
+            min-width: 280px;
+
+            max-width: 380px;
+
+            padding: 14px 16px;
+
+            border-radius: 12px;
+
+            background: white;
+
+            border: 1px solid var(--gray-200);
+
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            animation: toastIn 0.25s ease;
+
+        }
+
+        .toast.success {
+
+            border-left: 4px solid var(--green);
+
+        }
+
+        .toast.error {
+
+            border-left: 4px solid var(--red);
+
+        }
+
+        @keyframes toastIn {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(-8px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+        /* MOBILE */
+
+        .mobile-menu-btn {
+
+            display: none;
+
+            width: 40px;
+
+            height: 40px;
+
+            border: 1px solid var(--gray-200);
+
+            background: white;
+
+            border-radius: 10px;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+        .mobile-overlay {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(24,24,27,0.45);
+
+            z-index: 900;
+
+        }
+
+        @media (max-width: 1000px) {
+
+            .settings-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+        @media (max-width: 800px) {
+
+            .sidebar {
+
+                transform: translateX(-100%);
+
+                transition: transform 0.25s ease;
+
+            }
+
+            .sidebar.open {
+
+                transform: translateX(0);
+
+            }
+
+            .mobile-overlay.open {
+
+                display: block;
+
+            }
+
+            .main {
+
+                margin-left: 0;
+
+            }
+
+            .topbar {
+
+                padding: 0 18px;
+
+                gap: 12px;
+
+            }
+
+            .mobile-menu-btn {
+
+                display: flex;
+
+            }
+
+            .topbar-left {
+
+                display: flex;
+
+                align-items: center;
+
+                gap: 12px;
+
+            }
+
+            .topbar-left h1 {
+
+                font-size: 21px;
+
+            }
+
+            .topbar-left p {
+
+                display: none;
+
+            }
+
+            .content {
+
+                padding: 22px 16px 80px;
+
+            }
+
+            .form-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .form-group.full {
+
+                grid-column: auto;
+
+            }
+
+        }
+
+        @media (max-width: 520px) {
+
+            .topbar {
+
+                height: 70px;
+
+            }
+
+            .topbar-actions .btn-secondary {
+
+                display: none;
+
+            }
+
+            .topbar-actions .btn {
+
+                padding: 10px 12px;
+
+            }
+
+            .card-header,
+
+            .card-body,
+
+            .card-footer {
+
+                padding: 18px;
+
+            }
+
+            .toast-container {
+
+                left: 14px;
+
+                right: 14px;
+
+                top: 14px;
+
+            }
+
+            .toast {
+
+                min-width: 0;
+
+                width: 100%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-mark">N</div>
+
+            <div class="brand-text">
+
+                <div class="brand-name">NINICE</div>
+
+                <div class="brand-sub">Boutique</div>
+
+            </div>
+
+        </div>
+
+        <nav class="nav">
+
+            <div class="nav-title">Administration</div>
+
+            <a href="admin-dashboard.html">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+
+                    <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+
+                    <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+
+                    <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+
+                    <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+
+                </svg>
+
+                Tableau de bord
+
+            </a>
+
+            <a href="admin-produits.html">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+
+                    <path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"></path>
+
+                    <path d="M2 7h20v5H2z"></path>
+
+                    <path d="M12 7v14"></path>
+
+                    <path d="M5 7V5a2 2 0 0 1 2-2h3l2 4"></path>
+
+                    <path d="M19 7V5a2 2 0 0 0-2-2h-3l-2 4"></path>
+
+                </svg>
+
+                Produits
+
+            </a>
+
+            <a href="admin-commandes.html">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+
+                    <path d="M4 4h16v16H4z"></path>
+
+                    <path d="M8 8h8"></path>
+
+                    <path d="M8 12h8"></path>
+
+                    <path d="M8 16h5"></path>
+
+                </svg>
+
+                Commandes
+
+            </a>
+
+            <a href="admin-categories.html">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+
+                    <path d="M4 5h6v6H4z"></path>
+
+                    <path d="M14 5h6v6h-6z"></path>
+
+                    <path d="M4 15h6v4H4z"></path>
+
+                    <path d="M14 15h6v4h-6z"></path>
+
+                </svg>
+
+                Catégories
+
+            </a>
+
+            <a href="admin-parametres.html" class="active">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+
+                    <circle cx="12" cy="12" r="3"></circle>
+
+                    <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.7 1.7-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.55V20h-2.4v-.09a1.7 1.7 0 0 0-1.03-1.55 1.7 1.7 0 0 0-1.88.34l-.06.06-1.7-1.7.06-.06A1.7 1.7 0 0 0 8.4 15a1.7 1.7 0 0 0-1.55-1.03H6v-2.4h.85A1.7 1.7 0 0 0 8.4 10a1.7 1.7 0 0 0-.34-1.88L8 8.06l1.7-1.7.06.06a1.7 1.7 0 0 0 1.88.34A1.7 1.7 0 0 0 12.67 5.2V4h2.4v1.2a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.88-.34l.06-.06 1.7 1.7-.06.06A1.7 1.7 0 0 0 19.34 10c.22.62.82 1.03 1.48 1.03H21v2.4h-.18A1.7 1.7 0 0 0 19.4 15z"></path>
+
+                </svg>
+
+                Paramètres
+
+            </a>
+
+            <div class="nav-title" style="margin-top:22px;">Boutique</div>
+
+            <a href="index.html" target="_blank">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+
+                    <path d="M3 10.5 12 3l9 7.5"></path>
+
+                    <path d="M5 9v11h14V9"></path>
+
+                    <path d="M9 20v-6h6v6"></path>
+
+                </svg>
+
+                Voir la boutique
+
+            </a>
+
+            <a href="suivi.html" target="_blank">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+
+                    <circle cx="12" cy="12" r="8"></circle>
+
+                    <path d="M12 8v4l2.5 2"></path>
+
+                </svg>
+
+                Suivi commande
+
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button class="logout-btn" id="logoutBtn">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+
+                    <path d="M10 17l5-5-5-5"></path>
+
+                    <path d="M15 12H3"></path>
+
+                    <path d="M21 19V5a2 2 0 0 0-2-2h-6"></path>
+
+                </svg>
+
+                Déconnexion
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu">
+
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+
+                        <path d="M4 6h16"></path>
+
+                        <path d="M4 12h16"></path>
+
+                        <path d="M4 18h16"></path>
+
+                    </svg>
+
+                </button>
+
+                <div>
+
+                    <h1>Paramètres</h1>
+
+                    <p>Gérez les informations générales de NINICE BOUTIQUE.</p>
+
+                </div>
+
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="btn btn-secondary" id="refreshBtn">
+
+                    Rafraîchir
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <section class="content">
+
+            <div class="settings-grid">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h2>Informations de la boutique</h2>
+
+                        <p>
+
+                            Ces informations peuvent être utilisées sur votre boutique et pour les commandes.
+
+                        </p>
+
+                    </div>
+
+                    <div id="loadingState" class="loading">
+
+                        <span class="spinner"></span>
+
+                        Chargement des paramètres...
+
+                    </div>
+
+                    <form id="settingsForm" style="display:none;">
+
+                        <div class="card-body">
+
+                            <div class="form-grid">
+
+                                <div class="form-group full">
+
+                                    <label for="storeName">
+
+                                        Nom de la boutique <span class="required">*</span>
+
+                                    </label>
+
+                                    <input
+
+                                        type="text"
+
+                                        id="storeName"
+
+                                        maxlength="120"
+
+                                        placeholder="NINICE BOUTIQUE"
+
+                                        required
+
+                                    >
+
+                                </div>
+
+                                <div class="form-group full">
+
+                                    <label for="description">
+
+                                        Description
+
+                                    </label>
+
+                                    <textarea
+
+                                        id="description"
+
+                                        maxlength="500"
+
+                                        placeholder="Présentez brièvement votre boutique."
+
+                                    ></textarea>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="phone">
+
+                                        Téléphone
+
+                                    </label>
+
+                                    <input
+
+                                        type="tel"
+
+                                        id="phone"
+
+                                        maxlength="30"
+
+                                        placeholder="Ex. 07 00 00 00 00"
+
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="whatsapp">
+
+                                        WhatsApp
+
+                                    </label>
+
+                                    <input
+
+                                        type="tel"
+
+                                        id="whatsapp"
+
+                                        maxlength="30"
+
+                                        placeholder="Ex. 07 00 00 00 00"
+
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="email">
+
+                                        Adresse e-mail
+
+                                    </label>
+
+                                    <input
+
+                                        type="email"
+
+                                        id="email"
+
+                                        maxlength="160"
+
+                                        placeholder="contact@niniceboutique.com"
+
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="city">
+
+                                        Ville <span class="required">*</span>
+
+                                    </label>
+
+                                    <input
+
+                                        type="text"
+
+                                        id="city"
+
+                                        maxlength="100"
+
+                                        placeholder="Bouaké"
+
+                                        required
+
+                                    >
+
+                                </div>
+
+                                <div class="form-group full">
+
+                                    <label for="address">
+
+                                        Adresse
+
+                                    </label>
+
+                                    <input
+
+                                        type="text"
+
+                                        id="address"
+
+                                        maxlength="250"
+
+                                        placeholder="Adresse ou localisation de la boutique"
+
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="deliveryFee">
+
+                                        Frais de livraison
+
+                                    </label>
+
+                                    <input
+
+                                        type="number"
+
+                                        id="deliveryFee"
+
+                                        min="0"
+
+                                        step="1"
+
+                                        placeholder="0"
+
+                                    >
+
+                                    <div class="field-help">
+
+                                        Montant appliqué aux commandes lorsque la livraison est payante.
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="freeDeliveryThreshold">
+
+                                        Livraison gratuite à partir de
+
+                                    </label>
+
+                                    <input
+
+                                        type="number"
+
+                                        id="freeDeliveryThreshold"
+
+                                        min="0"
+
+                                        step="1"
+
+                                        placeholder="Laisser vide si non applicable"
+
+                                    >
+
+                                    <div class="field-help">
+
+                                        Laissez vide pour ne pas utiliser de seuil de gratuité.
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card-footer">
+
+                            <button type="button" class="btn btn-secondary" id="resetBtn">
+
+                                Annuler
+
+                            </button>
+
+                            <button type="submit" class="btn btn-primary" id="saveBtn">
+
+                                Enregistrer les modifications
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <aside>
+
+                    <div class="card info-card">
+
+                        <div class="info-title">
+
+                            Aperçu des informations
+
+                        </div>
+
+                        <div class="info-item">
+
+                            <div class="info-label">Boutique</div>
+
+                            <div class="info-value" id="previewStoreName">
+
+                                NINICE BOUTIQUE
+
+                            </div>
+
+                        </div>
+
+                        <div class="info-item">
+
+                            <div class="info-label">Ville</div>
+
+                            <div class="info-value" id="previewCity">
+
+                                Bouaké
+
+                            </div>
+
+                        </div>
+
+                        <div class="info-item">
+
+                            <div class="info-label">Téléphone</div>
+
+                            <div class="info-value" id="previewPhone">
+
+                                Non renseigné
+
+                            </div>
+
+                        </div>
+
+                        <div class="info-item">
+
+                            <div class="info-label">WhatsApp</div>
+
+                            <div class="info-value" id="previewWhatsapp">
+
+                                Non renseigné
+
+                            </div>
+
+                        </div>
+
+                        <div class="info-item">
+
+                            <div class="info-label">E-mail</div>
+
+                            <div class="info-value" id="previewEmail">
+
+                                Non renseigné
+
+                            </div>
+
+                        </div>
+
+                        <div class="info-item">
+
+                            <div class="info-label">Livraison</div>
+
+                            <div class="info-value" id="previewDelivery">
+
+                                Gratuite
+
+                            </div>
+
+                        </div>
+
+                        <div class="notice">
+
+                            Les paramètres sont enregistrés directement dans Supabase.
+
+                            Les informations affichées ici correspondent aux données actuellement enregistrées.
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+
+    const SUPABASE_URL = "https://etgkyndycareboaurrtx.supabase.co";
+
+    const SUPABASE_ANON_KEY = "sb_publishable_aP15ikBeGVV5xzOeBlw_BVytxavt";
+
+    const ADMIN_USER_ID = "f21920e5-7c89-4f65-87fa-e6d5b210ec16";
+
+    let currentSettings = null;
+
+    const sidebar = document.getElementById("sidebar");
+
+    const mobileOverlay = document.getElementById("mobileOverlay");
+
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+
+    const loadingState = document.getElementById("loadingState");
+
+    const settingsForm = document.getElementById("settingsForm");
+
+    const refreshBtn = document.getElementById("refreshBtn");
+
+    const resetBtn = document.getElementById("resetBtn");
+
+    const saveBtn = document.getElementById("saveBtn");
+
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    const storeNameInput = document.getElementById("storeName");
+
+    const descriptionInput = document.getElementById("description");
+
+    const phoneInput = document.getElementById("phone");
+
+    const whatsappInput = document.getElementById("whatsapp");
+
+    const emailInput = document.getElementById("email");
+
+    const cityInput = document.getElementById("city");
+
+    const addressInput = document.getElementById("address");
+
+    const deliveryFeeInput = document.getElementById("deliveryFee");
+
+    const freeDeliveryThresholdInput = document.getElementById("freeDeliveryThreshold");
+
+    function getAdminToken() {
+
+        return localStorage.getItem("ninice_admin_access_token");
+
+    }
+
+    function headers(token = getAdminToken()) {
+
+        return {
+
+            "apikey": SUPABASE_ANON_KEY,
+
+            "Authorization": `Bearer ${token}`,
+
+            "Content-Type": "application/json"
+
+        };
+
+    }
+
+    function showToast(message, type = "success") {
+
+        const container = document.getElementById("toastContainer");
+
+        const toast = document.createElement("div");
+
+        toast.className = `toast ${type}`;
+
+        toast.textContent = message;
+
+        container.appendChild(toast);
+
+        setTimeout(() => {
+
+            toast.remove();
+
+        }, 3500);
+
+    }
+
+    function openMobileMenu() {
+
+        sidebar.classList.add("open");
+
+        mobileOverlay.classList.add("open");
+
+    }
+
+    function closeMobileMenu() {
+
+        sidebar.classList.remove("open");
+
+        mobileOverlay.classList.remove("open");
+
+    }
+
+    mobileMenuBtn.addEventListener("click", openMobileMenu);
+
+    mobileOverlay.addEventListener("click", closeMobileMenu);
+
+    document.querySelectorAll(".nav a").forEach(link => {
+
+        link.addEventListener("click", closeMobileMenu);
+
+    });
+
+    function setLoading(isLoading) {
+
+        if (isLoading) {
+
+            loadingState.style.display = "flex";
+
+            settingsForm.style.display = "none";
+
+        } else {
+
+            loadingState.style.display = "none";
+
+            settingsForm.style.display = "block";
+
+        }
+
+    }
+
+    function firstRow(data) {
+
+        if (Array.isArray(data)) {
+
+            return data[0] || null;
+
+        }
+
+        if (data && Array.isArray(data.data)) {
+
+            return data.data[0] || null;
+
+        }
+
+        return data || null;
+
+    }
+
+    function setInputValue(input, value) {
+
+        input.value = value === null || value === undefined ? "" : value;
+
+    }
+
+    function populateForm(settings) {
+
+        currentSettings = {
+
+            ...settings
+
+        };
+
+        setInputValue(storeNameInput, settings.store_name || "NINICE BOUTIQUE");
+
+        setInputValue(descriptionInput, settings.description);
+
+        setInputValue(phoneInput, settings.phone);
+
+        setInputValue(whatsappInput, settings.whatsapp);
+
+        setInputValue(emailInput, settings.email);
+
+        setInputValue(cityInput, settings.city || "Bouaké");
+
+        setInputValue(addressInput, settings.address);
+
+        setInputValue(
+
+            deliveryFeeInput,
+
+            settings.delivery_fee !== null && settings.delivery_fee !== undefined
+
+                ? Number(settings.delivery_fee)
+
+                : 0
+
+        );
+
+        setInputValue(
+
+            freeDeliveryThresholdInput,
+
+            settings.free_delivery_threshold !== null &&
+
+            settings.free_delivery_threshold !== undefined
+
+                ? Number(settings.free_delivery_threshold)
+
+                : ""
+
+        );
+
+        updatePreview();
+
+    }
+
+    function formatMoney(value) {
+
+        const number = Number(value || 0);
+
+        return new Intl.NumberFormat("fr-FR", {
+
+            maximumFractionDigits: 0
+
+        }).format(number) + " FCFA";
+
+    }
+
+    function updatePreview() {
+
+        const storeName = storeNameInput.value.trim();
+
+        const city = cityInput.value.trim();
+
+        const phone = phoneInput.value.trim();
+
+        const whatsapp = whatsappInput.value.trim();
+
+        const email = emailInput.value.trim();
+
+        const deliveryFee = Number(deliveryFeeInput.value || 0);
+
+        const thresholdValue = freeDeliveryThresholdInput.value.trim();
+
+        document.getElementById("previewStoreName").textContent =
+
+            storeName || "NINICE BOUTIQUE";
+
+        document.getElementById("previewCity").textContent =
+
+            city || "Non renseignée";
+
+        document.getElementById("previewPhone").textContent =
+
+            phone || "Non renseigné";
+
+        document.getElementById("previewWhatsapp").textContent =
+
+            whatsapp || "Non renseigné";
+
+        document.getElementById("previewEmail").textContent =
+
+            email || "Non renseigné";
+
+        let deliveryText = "";
+
+        if (deliveryFee <= 0) {
+
+            deliveryText = "Gratuite";
+
+        } else {
+
+            deliveryText = formatMoney(deliveryFee);
+
+            if (thresholdValue !== "") {
+
+                const threshold = Number(thresholdValue);
+
+                if (!Number.isNaN(threshold) && threshold >= 0) {
+
+                    deliveryText += ` — gratuite dès ${formatMoney(threshold)}`;
+
+                }
+
+            }
+
+        }
+
+        document.getElementById("previewDelivery").textContent = deliveryText;
+
+    }
+
+    [
+
+        storeNameInput,
+
+        phoneInput,
+
+        whatsappInput,
+
+        emailInput,
+
+        cityInput,
+
+        deliveryFeeInput,
+
+        freeDeliveryThresholdInput
+
+    ].forEach(input => {
+
+        input.addEventListener("input", updatePreview);
+
+    });
+
+    async function verifyAdmin() {
+
+        const token = getAdminToken();
+
+        if (!token) {
+
+            window.location.href = "admin.html";
+
+            return false;
+
+        }
+
+        try {
+
+            const response = await fetch(
+
+                `${SUPABASE_URL}/rest/v1/admin_users?select=id,role&id=eq.${ADMIN_USER_ID}`,
+
+                {
+
+                    method: "GET",
+
+                    headers: headers(token)
+
+                }
+
+            );
+
+            if (!response.ok) {
+
+                throw new Error("Session administrateur invalide.");
+
+            }
+
+            const data = await response.json();
+
+            if (!Array.isArray(data) || data.length === 0 || data[0].role !== "admin") {
+
+                throw new Error("Accès administrateur refusé.");
+
+            }
+
+            return true;
+
+        } catch (error) {
+
+            localStorage.removeItem("ninice_admin_access_token");
+
+            localStorage.removeItem("ninice_admin_refresh_token");
+
+            localStorage.removeItem("ninice_admin_email");
+
+            window.location.href = "admin.html";
+
+            return false;
+
+        }
+
+    }
+
+    async function loadSettings() {
+
+        setLoading(true);
+
+        try {
+
+            const token = getAdminToken();
+
+            const response = await fetch(
+
+                `${SUPABASE_URL}/rest/v1/rpc/admin_get_store_settings`,
+
+                {
+
+                    method: "POST",
+
+                    headers: headers(token),
+
+                    body: JSON.stringify({})
+
+                }
+
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+
+                throw new Error(
+
+                    data?.message ||
+
+                    data?.error ||
+
+                    "Impossible de charger les paramètres."
+
+                );
+
+            }
+
+            const settings = firstRow(data);
+
+            if (!settings) {
+
+                throw new Error("Aucun paramètre de boutique n'a été trouvé.");
+
+            }
+
+            populateForm(settings);
+
+            setLoading(false);
+
+        } catch (error) {
+
+            setLoading(false);
+
+            console.error(error);
+
+            showToast(
+
+                error.message || "Impossible de charger les paramètres.",
+
+                "error"
+
+            );
+
+        }
+
+    }
+
+    function validateForm() {
+
+        const storeName = storeNameInput.value.trim();
+
+        const city = cityInput.value.trim();
+
+        const email = emailInput.value.trim();
+
+        const deliveryFeeRaw = deliveryFeeInput.value.trim();
+
+        const thresholdRaw = freeDeliveryThresholdInput.value.trim();
+
+        if (!storeName) {
+
+            showToast("Le nom de la boutique est obligatoire.", "error");
+
+            storeNameInput.focus();
+
+            return false;
+
+        }
+
+        if (!city) {
+
+            showToast("La ville est obligatoire.", "error");
+
+            cityInput.focus();
+
+            return false;
+
+        }
+
+        if (email && !emailInput.checkValidity()) {
+
+            showToast("Veuillez saisir une adresse e-mail valide.", "error");
+
+            emailInput.focus();
+
+            return false;
+
+        }
+
+        if (deliveryFeeRaw === "") {
+
+            deliveryFeeInput.value = "0";
+
+        }
+
+        const deliveryFee = Number(deliveryFeeInput.value);
+
+        if (Number.isNaN(deliveryFee) || deliveryFee < 0) {
+
+            showToast("Les frais de livraison doivent être supérieurs ou égaux à 0.", "error");
+
+            deliveryFeeInput.focus();
+
+            return false;
+
+        }
+
+        if (thresholdRaw !== "") {
+
+            const threshold = Number(thresholdRaw);
+
+            if (Number.isNaN(threshold) || threshold < 0) {
+
+                showToast(
+
+                    "Le seuil de livraison gratuite doit être supérieur ou égal à 0.",
+
+                    "error"
+
+                );
+
+                freeDeliveryThresholdInput.focus();
+
+                return false;
+
+            }
+
+        }
+
+        return true;
+
+    }
+
+    async function saveSettings(event) {
+
+        event.preventDefault();
+
+        if (!validateForm()) {
+
+            return;
+
+        }
+
+        const token = getAdminToken();
+
+        if (!token) {
+
+            window.location.href = "admin.html";
+
+            return;
+
+        }
+
+        saveBtn.disabled = true;
+
+        saveBtn.textContent = "Enregistrement...";
+
+        const payload = {
+
+            p_store_name: storeNameInput.value.trim(),
+
+            p_description: descriptionInput.value.trim() || null,
+
+            p_phone: phoneInput.value.trim() || null,
+
+            p_whatsapp: whatsappInput.value.trim() || null,
+
+            p_email: emailInput.value.trim() || null,
+
+            p_city: cityInput.value.trim(),
+
+            p_address: addressInput.value.trim() || null,
+
+            p_delivery_fee: Number(deliveryFeeInput.value || 0),
+
+            p_free_delivery_threshold:
+
+                freeDeliveryThresholdInput.value.trim() === ""
+
+                    ? null
+
+                    : Number(freeDeliveryThresholdInput.value)
+
+        };
+
+        try {
+
+            const response = await fetch(
+
+                `${SUPABASE_URL}/rest/v1/rpc/admin_update_store_settings`,
+
+                {
+
+                    method: "POST",
+
+                    headers: headers(token),
+
+                    body: JSON.stringify(payload)
+
+                }
+
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+
+                throw new Error(
+
+                    data?.message ||
+
+                    data?.error ||
+
+                    "Impossible d'enregistrer les paramètres."
+
+                );
+
+            }
+
+            showToast("Les paramètres ont été enregistrés.");
+
+            await loadSettings();
+
+        } catch (error) {
+
+            console.error(error);
+
+            showToast(
+
+                error.message || "Une erreur est survenue pendant l'enregistrement.",
+
+                "error"
+
+            );
+
+        } finally {
+
+            saveBtn.disabled = false;
+
+            saveBtn.textContent = "Enregistrer les modifications";
+
+        }
+
+    }
+
+    function resetForm() {
+
+        if (!currentSettings) {
+
+            return;
+
+        }
+
+        populateForm(currentSettings);
+
+        showToast("Les modifications non enregistrées ont été annulées.");
+
+    }
+
+    async function logout() {
+
+        localStorage.removeItem("ninice_admin_access_token");
+
+        localStorage.removeItem("ninice_admin_refresh_token");
+
+        localStorage.removeItem("ninice_admin_email");
+
+        window.location.href = "admin.html";
+
+    }
+
+    settingsForm.addEventListener("submit", saveSettings);
+
+    resetBtn.addEventListener("click", resetForm);
+
+    refreshBtn.addEventListener("click", loadSettings);
+
+    logoutBtn.addEventListener("click", logout);
+
+    async function init() {
+
+        const isAdmin = await verifyAdmin();
+
+        if (!isAdmin) {
+
+            return;
+
+        }
+
+        await loadSettings();
+
+    }
+
+    init();
+
+</script>
+
+</body>
+
+</html>
