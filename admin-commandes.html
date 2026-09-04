@@ -1,0 +1,3673 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Commandes | NINICE BOUTIQUE</title>
+
+    <meta name="theme-color" content="#6d28d9">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+
+            --violet: #6d28d9;
+
+            --violet-dark: #4c1d95;
+
+            --violet-light: #f3e8ff;
+
+            --violet-soft: #faf7ff;
+
+            --white: #ffffff;
+
+            --black: #18151f;
+
+            --gray-900: #292431;
+
+            --gray-700: #5f5968;
+
+            --gray-500: #8c8793;
+
+            --gray-300: #ddd9e3;
+
+            --gray-200: #ece9ef;
+
+            --gray-100: #f7f5f8;
+
+            --green: #15803d;
+
+            --green-bg: #dcfce7;
+
+            --orange: #c2410c;
+
+            --orange-bg: #ffedd5;
+
+            --red: #b91c1c;
+
+            --red-bg: #fee2e2;
+
+            --blue: #1d4ed8;
+
+            --blue-bg: #dbeafe;
+
+            --shadow: 0 10px 35px rgba(36, 21, 56, .07);
+
+            --shadow-lg: 0 20px 60px rgba(36, 21, 56, .12);
+
+            --radius: 18px;
+
+        }
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+        body {
+
+            font-family: "DM Sans", sans-serif;
+
+            background: var(--violet-soft);
+
+            color: var(--black);
+
+            min-height: 100vh;
+
+        }
+
+        button,
+
+        input,
+
+        select,
+
+        textarea {
+
+            font: inherit;
+
+        }
+
+        button {
+
+            cursor: pointer;
+
+        }
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+        .app {
+
+            min-height: 100vh;
+
+            display: flex;
+
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+
+            width: 270px;
+
+            background: var(--white);
+
+            border-right: 1px solid var(--gray-200);
+
+            position: fixed;
+
+            left: 0;
+
+            top: 0;
+
+            bottom: 0;
+
+            z-index: 100;
+
+            display: flex;
+
+            flex-direction: column;
+
+            padding: 25px 18px;
+
+        }
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            padding: 0 8px;
+
+            margin-bottom: 35px;
+
+        }
+
+        .brand-logo {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 13px;
+
+            background: var(--violet);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+        }
+
+        .brand-text strong {
+
+            display: block;
+
+            font-size: 17px;
+
+            letter-spacing: 1.5px;
+
+            line-height: 1;
+
+        }
+
+        .brand-text span {
+
+            display: block;
+
+            margin-top: 4px;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            color: var(--violet);
+
+            font-weight: 700;
+
+        }
+
+        .nav-title {
+
+            color: var(--gray-500);
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            padding: 0 12px;
+
+            margin-bottom: 9px;
+
+        }
+
+        .nav {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+        }
+
+        .nav a {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 12px 13px;
+
+            border-radius: 12px;
+
+            color: var(--gray-700);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: .2s;
+
+        }
+
+        .nav a:hover {
+
+            background: var(--violet-soft);
+
+            color: var(--violet);
+
+        }
+
+        .nav a.active {
+
+            background: var(--violet-light);
+
+            color: var(--violet);
+
+        }
+
+        .nav-icon {
+
+            width: 19px;
+
+            height: 19px;
+
+            flex: 0 0 19px;
+
+        }
+
+        .sidebar-bottom {
+
+            margin-top: auto;
+
+            border-top: 1px solid var(--gray-200);
+
+            padding-top: 16px;
+
+        }
+
+        .logout-btn {
+
+            width: 100%;
+
+            border: 0;
+
+            background: transparent;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 12px 13px;
+
+            border-radius: 12px;
+
+            color: var(--red);
+
+            font-weight: 600;
+
+            text-align: left;
+
+        }
+
+        .logout-btn:hover {
+
+            background: var(--red-bg);
+
+        }
+
+        /* MAIN */
+
+        .main {
+
+            margin-left: 270px;
+
+            width: calc(100% - 270px);
+
+            min-height: 100vh;
+
+            padding: 30px;
+
+        }
+
+        .topbar {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 28px;
+
+        }
+
+        .page-title h1 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 34px;
+
+            line-height: 1.1;
+
+            margin-bottom: 7px;
+
+        }
+
+        .page-title p {
+
+            color: var(--gray-700);
+
+            font-size: 14px;
+
+        }
+
+        .top-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+        .btn {
+
+            border: 1px solid var(--gray-200);
+
+            background: var(--white);
+
+            color: var(--gray-700);
+
+            border-radius: 12px;
+
+            padding: 11px 15px;
+
+            font-weight: 600;
+
+            font-size: 13px;
+
+            transition: .2s;
+
+        }
+
+        .btn:hover {
+
+            border-color: var(--violet);
+
+            color: var(--violet);
+
+        }
+
+        .btn-primary {
+
+            border-color: var(--violet);
+
+            background: var(--violet);
+
+            color: white;
+
+        }
+
+        .btn-primary:hover {
+
+            background: var(--violet-dark);
+
+            color: white;
+
+        }
+
+        .btn-danger {
+
+            color: var(--red);
+
+            border-color: #fecaca;
+
+        }
+
+        .btn-danger:hover {
+
+            background: var(--red-bg);
+
+            border-color: #fecaca;
+
+            color: var(--red);
+
+        }
+
+        /* FILTERS */
+
+        .filters {
+
+            background: var(--white);
+
+            border: 1px solid var(--gray-200);
+
+            border-radius: var(--radius);
+
+            padding: 18px;
+
+            box-shadow: var(--shadow);
+
+            display: grid;
+
+            grid-template-columns: minmax(240px, 1fr) 200px 170px auto;
+
+            gap: 12px;
+
+            margin-bottom: 22px;
+
+        }
+
+        .field {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+
+        }
+
+        .field label {
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            color: var(--gray-700);
+
+        }
+
+        .input,
+
+        .select,
+
+        .textarea {
+
+            width: 100%;
+
+            border: 1px solid var(--gray-200);
+
+            background: #fff;
+
+            border-radius: 11px;
+
+            padding: 11px 12px;
+
+            outline: none;
+
+            color: var(--black);
+
+            transition: .2s;
+
+        }
+
+        .input:focus,
+
+        .select:focus,
+
+        .textarea:focus {
+
+            border-color: var(--violet);
+
+            box-shadow: 0 0 0 3px rgba(109, 40, 217, .08);
+
+        }
+
+        .filter-actions {
+
+            display: flex;
+
+            align-items: flex-end;
+
+            gap: 8px;
+
+        }
+
+        /* TABLE */
+
+        .card {
+
+            background: var(--white);
+
+            border: 1px solid var(--gray-200);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+
+            overflow: hidden;
+
+        }
+
+        .card-head {
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            border-bottom: 1px solid var(--gray-200);
+
+        }
+
+        .card-head h2 {
+
+            font-size: 17px;
+
+        }
+
+        .count-label {
+
+            color: var(--gray-500);
+
+            font-size: 12px;
+
+        }
+
+        .table-wrap {
+
+            overflow-x: auto;
+
+        }
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 850px;
+
+        }
+
+        th {
+
+            text-align: left;
+
+            padding: 13px 18px;
+
+            background: var(--gray-100);
+
+            color: var(--gray-500);
+
+            text-transform: uppercase;
+
+            letter-spacing: .8px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+        }
+
+        td {
+
+            padding: 16px 18px;
+
+            border-top: 1px solid var(--gray-200);
+
+            font-size: 13px;
+
+            vertical-align: middle;
+
+        }
+
+        tbody tr {
+
+            transition: .15s;
+
+        }
+
+        tbody tr:hover {
+
+            background: #fcfbfd;
+
+        }
+
+        .order-number {
+
+            font-weight: 700;
+
+            color: var(--violet);
+
+        }
+
+        .customer-name {
+
+            font-weight: 700;
+
+            margin-bottom: 3px;
+
+        }
+
+        .customer-phone {
+
+            color: var(--gray-500);
+
+            font-size: 11px;
+
+        }
+
+        .date {
+
+            color: var(--gray-700);
+
+            white-space: nowrap;
+
+        }
+
+        .amount {
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+        }
+
+        .status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            padding: 6px 9px;
+
+            border-radius: 999px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+        }
+
+        .status-pending {
+
+            color: var(--orange);
+
+            background: var(--orange-bg);
+
+        }
+
+        .status-confirmed {
+
+            color: var(--blue);
+
+            background: var(--blue-bg);
+
+        }
+
+        .status-preparing {
+
+            color: var(--violet);
+
+            background: var(--violet-light);
+
+        }
+
+        .status-shipping {
+
+            color: #0369a1;
+
+            background: #e0f2fe;
+
+        }
+
+        .status-delivered {
+
+            color: var(--green);
+
+            background: var(--green-bg);
+
+        }
+
+        .status-cancelled {
+
+            color: var(--red);
+
+            background: var(--red-bg);
+
+        }
+
+        .action-btn {
+
+            border: 1px solid var(--gray-200);
+
+            background: white;
+
+            border-radius: 9px;
+
+            padding: 8px 11px;
+
+            color: var(--violet);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
+
+        .action-btn:hover {
+
+            background: var(--violet-light);
+
+            border-color: #d8b4fe;
+
+        }
+
+        /* STATES */
+
+        .state {
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+            color: var(--gray-500);
+
+        }
+
+        .state strong {
+
+            display: block;
+
+            color: var(--gray-900);
+
+            font-size: 16px;
+
+            margin-bottom: 5px;
+
+        }
+
+        .state p {
+
+            font-size: 13px;
+
+        }
+
+        .error-box {
+
+            margin: 20px;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            background: var(--red-bg);
+
+            color: var(--red);
+
+            font-size: 13px;
+
+        }
+
+        /* MODAL */
+
+        .modal-backdrop {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(20, 14, 29, .55);
+
+            backdrop-filter: blur(4px);
+
+            z-index: 500;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+        }
+
+        .modal-backdrop.show {
+
+            display: flex;
+
+        }
+
+        .modal {
+
+            width: min(900px, 100%);
+
+            max-height: 92vh;
+
+            overflow-y: auto;
+
+            background: white;
+
+            border-radius: 22px;
+
+            box-shadow: var(--shadow-lg);
+
+        }
+
+        .modal-head {
+
+            padding: 22px 24px;
+
+            border-bottom: 1px solid var(--gray-200);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+            position: sticky;
+
+            top: 0;
+
+            background: white;
+
+            z-index: 2;
+
+        }
+
+        .modal-title h2 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 25px;
+
+            margin-bottom: 6px;
+
+        }
+
+        .modal-title p {
+
+            color: var(--gray-500);
+
+            font-size: 12px;
+
+        }
+
+        .close-btn {
+
+            width: 36px;
+
+            height: 36px;
+
+            border-radius: 10px;
+
+            border: 1px solid var(--gray-200);
+
+            background: white;
+
+            color: var(--gray-700);
+
+            font-size: 20px;
+
+            line-height: 1;
+
+        }
+
+        .close-btn:hover {
+
+            background: var(--gray-100);
+
+        }
+
+        .modal-body {
+
+            padding: 24px;
+
+        }
+
+        .detail-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            gap: 12px;
+
+            margin-bottom: 25px;
+
+        }
+
+        .detail-box {
+
+            border: 1px solid var(--gray-200);
+
+            border-radius: 13px;
+
+            padding: 13px;
+
+        }
+
+        .detail-box.full {
+
+            grid-column: 1 / -1;
+
+        }
+
+        .detail-box .label {
+
+            display: block;
+
+            color: var(--gray-500);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: .8px;
+
+            margin-bottom: 5px;
+
+        }
+
+        .detail-box .value {
+
+            color: var(--gray-900);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            line-height: 1.5;
+
+        }
+
+        .section-title {
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
+
+        }
+
+        .items-box {
+
+            border: 1px solid var(--gray-200);
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            margin-bottom: 25px;
+
+        }
+
+        .item-row {
+
+            display: grid;
+
+            grid-template-columns: minmax(0, 1fr) 80px 120px 120px;
+
+            gap: 12px;
+
+            padding: 14px;
+
+            border-top: 1px solid var(--gray-200);
+
+            align-items: center;
+
+        }
+
+        .item-row:first-child {
+
+            border-top: 0;
+
+        }
+
+        .item-header {
+
+            background: var(--gray-100);
+
+            color: var(--gray-500);
+
+            text-transform: uppercase;
+
+            letter-spacing: .7px;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+        .item-name {
+
+            font-weight: 700;
+
+            font-size: 12px;
+
+        }
+
+        .item-meta {
+
+            color: var(--gray-500);
+
+            font-size: 10px;
+
+            margin-top: 4px;
+
+        }
+
+        .item-cell {
+
+            font-size: 12px;
+
+        }
+
+        .totals {
+
+            margin-left: auto;
+
+            width: min(330px, 100%);
+
+            border-top: 1px solid var(--gray-200);
+
+            padding-top: 13px;
+
+            margin-bottom: 28px;
+
+        }
+
+        .total-line {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            font-size: 13px;
+
+            padding: 5px 0;
+
+        }
+
+        .total-line span:first-child {
+
+            color: var(--gray-700);
+
+        }
+
+        .total-line.total-final {
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            padding-top: 10px;
+
+            margin-top: 5px;
+
+            border-top: 1px solid var(--gray-200);
+
+        }
+
+        .tracking {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 0;
+
+            margin-bottom: 28px;
+
+        }
+
+        .tracking-item {
+
+            position: relative;
+
+            padding: 0 0 18px 25px;
+
+            border-left: 1px solid var(--gray-300);
+
+            margin-left: 6px;
+
+        }
+
+        .tracking-item:last-child {
+
+            border-left-color: transparent;
+
+            padding-bottom: 0;
+
+        }
+
+        .tracking-dot {
+
+            width: 11px;
+
+            height: 11px;
+
+            border-radius: 50%;
+
+            background: var(--violet);
+
+            position: absolute;
+
+            left: -6px;
+
+            top: 2px;
+
+            border: 2px solid white;
+
+            box-shadow: 0 0 0 1px var(--violet);
+
+        }
+
+        .tracking-status {
+
+            font-weight: 700;
+
+            font-size: 12px;
+
+            margin-bottom: 4px;
+
+        }
+
+        .tracking-message {
+
+            color: var(--gray-700);
+
+            font-size: 11px;
+
+            line-height: 1.5;
+
+        }
+
+        .tracking-date {
+
+            color: var(--gray-500);
+
+            font-size: 10px;
+
+            margin-top: 5px;
+
+        }
+
+        .update-area {
+
+            background: var(--violet-soft);
+
+            border: 1px solid #e9d5ff;
+
+            border-radius: 15px;
+
+            padding: 17px;
+
+        }
+
+        .update-grid {
+
+            display: grid;
+
+            grid-template-columns: 220px 1fr;
+
+            gap: 12px;
+
+            margin-bottom: 12px;
+
+        }
+
+        .update-actions {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 8px;
+
+        }
+
+        .loading-spinner {
+
+            width: 20px;
+
+            height: 20px;
+
+            border: 2px solid var(--gray-200);
+
+            border-top-color: var(--violet);
+
+            border-radius: 50%;
+
+            animation: spin .7s linear infinite;
+
+            margin: 0 auto 10px;
+
+        }
+
+        @keyframes spin {
+
+            to {
+
+                transform: rotate(360deg);
+
+            }
+
+        }
+
+        .toast {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            z-index: 1000;
+
+            background: var(--gray-900);
+
+            color: white;
+
+            border-radius: 12px;
+
+            padding: 13px 16px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            box-shadow: var(--shadow-lg);
+
+            opacity: 0;
+
+            transform: translateY(15px);
+
+            pointer-events: none;
+
+            transition: .25s;
+
+        }
+
+        .toast.show {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+        .toast.error {
+
+            background: var(--red);
+
+        }
+
+        /* MOBILE */
+
+        .mobile-topbar {
+
+            display: none;
+
+        }
+
+        .mobile-overlay {
+
+            display: none;
+
+        }
+
+        @media (max-width: 1050px) {
+
+            .filters {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+            .filter-actions {
+
+                align-items: center;
+
+            }
+
+        }
+
+        @media (max-width: 800px) {
+
+            .sidebar {
+
+                transform: translateX(-100%);
+
+                transition: transform .25s ease;
+
+                box-shadow: var(--shadow-lg);
+
+            }
+
+            .sidebar.open {
+
+                transform: translateX(0);
+
+            }
+
+            .mobile-overlay.show {
+
+                display: block;
+
+                position: fixed;
+
+                inset: 0;
+
+                background: rgba(0, 0, 0, .35);
+
+                z-index: 90;
+
+            }
+
+            .main {
+
+                margin-left: 0;
+
+                width: 100%;
+
+                padding: 18px;
+
+                padding-top: 75px;
+
+            }
+
+            .mobile-topbar {
+
+                position: fixed;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: space-between;
+
+                left: 0;
+
+                right: 0;
+
+                top: 0;
+
+                height: 60px;
+
+                background: white;
+
+                border-bottom: 1px solid var(--gray-200);
+
+                z-index: 80;
+
+                padding: 0 18px;
+
+            }
+
+            .mobile-brand {
+
+                display: flex;
+
+                align-items: center;
+
+                gap: 8px;
+
+                font-weight: 700;
+
+                letter-spacing: 1px;
+
+                font-size: 14px;
+
+            }
+
+            .mobile-brand-logo {
+
+                width: 32px;
+
+                height: 32px;
+
+                border-radius: 9px;
+
+                background: var(--violet);
+
+                color: white;
+
+                display: flex;
+
+                justify-content: center;
+
+                align-items: center;
+
+                font-family: "Playfair Display", serif;
+
+                font-size: 18px;
+
+            }
+
+            .menu-btn {
+
+                width: 38px;
+
+                height: 38px;
+
+                border: 1px solid var(--gray-200);
+
+                background: white;
+
+                border-radius: 10px;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+
+                color: var(--gray-700);
+
+            }
+
+            .topbar {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+            .top-actions {
+
+                width: 100%;
+
+            }
+
+            .top-actions .btn {
+
+                flex: 1;
+
+            }
+
+            .page-title h1 {
+
+                font-size: 29px;
+
+            }
+
+            .filters {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .filter-actions {
+
+                align-items: stretch;
+
+            }
+
+            .filter-actions .btn {
+
+                width: 100%;
+
+            }
+
+            .detail-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .detail-box.full {
+
+                grid-column: auto;
+
+            }
+
+            .item-row {
+
+                grid-template-columns: 1fr 65px;
+
+            }
+
+            .item-row > div:nth-child(3),
+
+            .item-row > div:nth-child(4) {
+
+                text-align: right;
+
+            }
+
+            .item-header {
+
+                display: none;
+
+            }
+
+            .update-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+        @media (max-width: 520px) {
+
+            .main {
+
+                padding: 14px;
+
+                padding-top: 70px;
+
+            }
+
+            .modal-backdrop {
+
+                padding: 8px;
+
+            }
+
+            .modal {
+
+                border-radius: 17px;
+
+                max-height: 96vh;
+
+            }
+
+            .modal-head,
+
+            .modal-body {
+
+                padding: 17px;
+
+            }
+
+            .top-actions {
+
+                flex-direction: column;
+
+            }
+
+            .top-actions .btn {
+
+                width: 100%;
+
+            }
+
+            .card-head {
+
+                padding: 16px;
+
+            }
+
+            td,
+
+            th {
+
+                padding-left: 12px;
+
+                padding-right: 12px;
+
+            }
+
+            .toast {
+
+                left: 14px;
+
+                right: 14px;
+
+                bottom: 14px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<div class="mobile-topbar">
+
+    <div class="mobile-brand">
+
+        <div class="mobile-brand-logo">N</div>
+
+        <span>NINICE BOUTIQUE</span>
+
+    </div>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">
+
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+
+            <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+
+        </svg>
+
+    </button>
+
+</div>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">N</div>
+
+            <div class="brand-text">
+
+                <strong>NINICE</strong>
+
+                <span>BOUTIQUE</span>
+
+            </div>
+
+        </div>
+
+        <div class="nav-title">Administration</div>
+
+        <nav class="nav">
+
+            <a href="admin-dashboard.html">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+
+                    <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+
+                    <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+
+                    <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+
+                    <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+
+                </svg>
+
+                Tableau de bord
+
+            </a>
+
+            <a href="admin-produits.html">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+
+                    <path d="M4 7.5L12 3L20 7.5V16.5L12 21L4 16.5V7.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+
+                    <path d="M4 7.5L12 12L20 7.5M12 12V21" stroke="currentColor" stroke-width="1.8"/>
+
+                </svg>
+
+                Produits
+
+            </a>
+
+            <a href="admin-commandes.html" class="active">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+
+                    <path d="M6 3H18V21H6V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+
+                    <path d="M9 7H15M9 11H15M9 15H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+
+                </svg>
+
+                Commandes
+
+            </a>
+
+            <a href="admin-categories.html">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+
+                    <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+
+                    <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+
+                    <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+
+                    <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+
+                </svg>
+
+                Catégories
+
+            </a>
+
+            <a href="admin-parametres.html">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+
+                    <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5A3.5 3.5 0 0 0 12 15.5Z" stroke="currentColor" stroke-width="1.8"/>
+
+                    <path d="M19.4 15A1.7 1.7 0 0 0 19.7 16.9L20 17.2L17.2 20L16.9 19.7A1.7 1.7 0 0 0 15 19.4A1.7 1.7 0 0 0 14 21V21.3H10V21A1.7 1.7 0 0 0 9 19.4A1.7 1.7 0 0 0 7.1 19.7L6.8 20L4 17.2L4.3 16.9A1.7 1.7 0 0 0 4.6 15A1.7 1.7 0 0 0 3 14H2.7V10H3A1.7 1.7 0 0 0 4.6 9A1.7 1.7 0 0 0 4.3 7.1L4 6.8L6.8 4L7.1 4.3A1.7 1.7 0 0 0 9 4.6A1.7 1.7 0 0 0 10 3V2.7H14V3A1.7 1.7 0 0 0 15 4.6A1.7 1.7 0 0 0 16.9 4.3L17.2 4L20 6.8L19.7 7.1A1.7 1.7 0 0 0 19.4 9A1.7 1.7 0 0 0 21 10H21.3V14H21A1.7 1.7 0 0 0 19.4 15Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+
+                </svg>
+
+                Paramètres
+
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html" class="nav" style="margin-bottom:5px;">
+
+                <span style="display:flex;align-items:center;gap:12px;padding:12px 13px;color:var(--gray-700);font-size:14px;font-weight:600;">
+
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+
+                        <path d="M3 10.5L12 3L21 10.5V20H14.5V14H9.5V20H3V10.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+
+                    </svg>
+
+                    Voir la boutique
+
+                </span>
+
+            </a>
+
+            <button class="logout-btn" id="logoutBtn">
+
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+
+                    <path d="M10 17L15 12L10 7M15 12H3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <path d="M21 4V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+
+                </svg>
+
+                Déconnexion
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <div class="page-title">
+
+                <h1>Commandes</h1>
+
+                <p>Gérez les commandes de vos clientes et leur suivi.</p>
+
+            </div>
+
+            <div class="top-actions">
+
+                <button class="btn" id="refreshBtn">
+
+                    Actualiser
+
+                </button>
+
+                <a href="suivi.html" class="btn btn-primary">
+
+                    Voir le suivi client
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- FILTERS -->
+
+        <section class="filters">
+
+            <div class="field">
+
+                <label for="searchInput">Rechercher</label>
+
+                <input
+
+                    class="input"
+
+                    id="searchInput"
+
+                    type="search"
+
+                    placeholder="N° commande, nom ou téléphone"
+
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label for="statusFilter">Statut</label>
+
+                <select class="select" id="statusFilter">
+
+                    <option value="">Tous les statuts</option>
+
+                    <option value="pending">En attente</option>
+
+                    <option value="confirmed">Confirmée</option>
+
+                    <option value="preparing">En préparation</option>
+
+                    <option value="shipping">En livraison</option>
+
+                    <option value="delivered">Livrée</option>
+
+                    <option value="cancelled">Annulée</option>
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label for="dateFilter">Date</label>
+
+                <select class="select" id="dateFilter">
+
+                    <option value="">Toutes les dates</option>
+
+                    <option value="today">Aujourd'hui</option>
+
+                    <option value="7">7 derniers jours</option>
+
+                    <option value="30">30 derniers jours</option>
+
+                </select>
+
+            </div>
+
+            <div class="filter-actions">
+
+                <button class="btn" id="resetFilters">
+
+                    Réinitialiser
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ORDERS -->
+
+        <section class="card">
+
+            <div class="card-head">
+
+                <div>
+
+                    <h2>Liste des commandes</h2>
+
+                    <span class="count-label" id="ordersCount">Chargement...</span>
+
+                </div>
+
+            </div>
+
+            <div id="ordersContainer">
+
+                <div class="state">
+
+                    <div class="loading-spinner"></div>
+
+                    <strong>Chargement des commandes</strong>
+
+                    <p>Veuillez patienter.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- MODAL DETAIL -->
+
+<div class="modal-backdrop" id="modalBackdrop">
+
+    <div class="modal">
+
+        <div class="modal-head">
+
+            <div class="modal-title">
+
+                <h2 id="modalOrderNumber">Commande</h2>
+
+                <p id="modalOrderDate"></p>
+
+            </div>
+
+            <button class="close-btn" id="closeModal" aria-label="Fermer">
+
+                ×
+
+            </button>
+
+        </div>
+
+        <div class="modal-body" id="modalBody">
+
+            <div class="state">
+
+                <div class="loading-spinner"></div>
+
+                <strong>Chargement</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+    const SUPABASE_URL = "https://etgkyndycareboaurrtx.supabase.co";
+
+    const SUPABASE_ANON_KEY = "sb_publishable_aP15ikBeGVV5xzOeBlw_BVytxavt";
+
+    const ADMIN_USER_ID = "f21920e5-7c89-4f65-87fa-e6d5b210ec16";
+
+    const ADMIN_TOKEN_KEY = "ninice_admin_access_token";
+
+    let accessToken = localStorage.getItem(ADMIN_TOKEN_KEY);
+
+    let allOrders = [];
+
+    let filteredOrders = [];
+
+    let currentOrder = null;
+
+    const statusLabels = {
+
+        pending: "En attente",
+
+        confirmed: "Confirmée",
+
+        preparing: "En préparation",
+
+        shipping: "En livraison",
+
+        delivered: "Livrée",
+
+        cancelled: "Annulée"
+
+    };
+
+    const statusClasses = {
+
+        pending: "status-pending",
+
+        confirmed: "status-confirmed",
+
+        preparing: "status-preparing",
+
+        shipping: "status-shipping",
+
+        delivered: "status-delivered",
+
+        cancelled: "status-cancelled"
+
+    };
+
+    const $ = (selector) => document.querySelector(selector);
+
+    function escapeHTML(value) {
+
+        if (value === null || value === undefined) return "";
+
+        return String(value)
+
+            .replace(/&/g, "&amp;")
+
+            .replace(/</g, "&lt;")
+
+            .replace(/>/g, "&gt;")
+
+            .replace(/"/g, "&quot;")
+
+            .replace(/'/g, "&#039;");
+
+    }
+
+    function formatPrice(value) {
+
+        const number = Number(value || 0);
+
+        return new Intl.NumberFormat("fr-FR", {
+
+            maximumFractionDigits: 0
+
+        }).format(number) + " FCFA";
+
+    }
+
+    function formatDate(value) {
+
+        if (!value) return "—";
+
+        const date = new Date(value);
+
+        if (Number.isNaN(date.getTime())) {
+
+            return escapeHTML(value);
+
+        }
+
+        return new Intl.DateTimeFormat("fr-FR", {
+
+            day: "2-digit",
+
+            month: "2-digit",
+
+            year: "numeric",
+
+            hour: "2-digit",
+
+            minute: "2-digit"
+
+        }).format(date);
+
+    }
+
+    function formatShortDate(value) {
+
+        if (!value) return "—";
+
+        const date = new Date(value);
+
+        if (Number.isNaN(date.getTime())) {
+
+            return escapeHTML(value);
+
+        }
+
+        return new Intl.DateTimeFormat("fr-FR", {
+
+            day: "2-digit",
+
+            month: "2-digit",
+
+            year: "numeric"
+
+        }).format(date);
+
+    }
+
+    function normalizeText(value) {
+
+        return String(value || "")
+
+            .toLowerCase()
+
+            .normalize("NFD")
+
+            .replace(/[\u0300-\u036f]/g, "");
+
+    }
+
+    function showToast(message, error = false) {
+
+        const toast = $("#toast");
+
+        toast.textContent = message;
+
+        toast.className = "toast show";
+
+        if (error) {
+
+            toast.classList.add("error");
+
+        }
+
+        clearTimeout(window.toastTimer);
+
+        window.toastTimer = setTimeout(() => {
+
+            toast.classList.remove("show");
+
+        }, 3000);
+
+    }
+
+    function authHeaders() {
+
+        return {
+
+            "apikey": SUPABASE_ANON_KEY,
+
+            "Authorization": "Bearer " + accessToken,
+
+            "Content-Type": "application/json"
+
+        };
+
+    }
+
+    async function verifyAdmin() {
+
+        if (!accessToken) {
+
+            window.location.href = "admin.html";
+
+            return false;
+
+        }
+
+        try {
+
+            const response = await fetch(
+
+                `${SUPABASE_URL}/rest/v1/admin_users?select=id,role&id=eq.${ADMIN_USER_ID}`,
+
+                {
+
+                    headers: {
+
+                        "apikey": SUPABASE_ANON_KEY,
+
+                        "Authorization": "Bearer " + accessToken
+
+                    }
+
+                }
+
+            );
+
+            if (!response.ok) {
+
+                throw new Error("Session administrateur invalide.");
+
+            }
+
+            const data = await response.json();
+
+            if (!Array.isArray(data) || !data.length || data[0].role !== "admin") {
+
+                throw new Error("Accès administrateur refusé.");
+
+            }
+
+            return true;
+
+        } catch (error) {
+
+            localStorage.removeItem("ninice_admin_access_token");
+
+            localStorage.removeItem("ninice_admin_refresh_token");
+
+            localStorage.removeItem("ninice_admin_email");
+
+            window.location.href = "admin.html";
+
+            return false;
+
+        }
+
+    }
+
+    async function callRPC(functionName, body = {}) {
+
+        const response = await fetch(
+
+            `${SUPABASE_URL}/rest/v1/rpc/${functionName}`,
+
+            {
+
+                method: "POST",
+
+                headers: authHeaders(),
+
+                body: JSON.stringify(body)
+
+            }
+
+        );
+
+        let data = null;
+
+        try {
+
+            data = await response.json();
+
+        } catch {
+
+            data = null;
+
+        }
+
+        if (!response.ok) {
+
+            const message =
+
+                data?.message ||
+
+                data?.error_description ||
+
+                data?.hint ||
+
+                data?.details ||
+
+                "Une erreur est survenue.";
+
+            throw new Error(message);
+
+        }
+
+        return data;
+
+    }
+
+    function normalizeOrder(order) {
+
+        if (!order || typeof order !== "object") {
+
+            return null;
+
+        }
+
+        const items =
+
+            order.items ||
+
+            order.order_items ||
+
+            order.orderItems ||
+
+            [];
+
+        const tracking =
+
+            order.tracking ||
+
+            order.order_tracking ||
+
+            order.orderTracking ||
+
+            [];
+
+        return {
+
+            ...order,
+
+            id: order.id || order.order_id,
+
+            order_number:
+
+                order.order_number ||
+
+                order.orderNumber ||
+
+                order.numero_commande ||
+
+                order.numeroCommande ||
+
+                "—",
+
+            customer_name:
+
+                order.customer_name ||
+
+                order.customerName ||
+
+                order.nom_client ||
+
+                order.nom ||
+
+                "—",
+
+            customer_phone:
+
+                order.customer_phone ||
+
+                order.customerPhone ||
+
+                order.phone ||
+
+                order.telephone ||
+
+                "—",
+
+            city:
+
+                order.city ||
+
+                order.ville ||
+
+                "—",
+
+            district:
+
+                order.district ||
+
+                order.quartier ||
+
+                "—",
+
+            address:
+
+                order.address ||
+
+                order.adresse ||
+
+                order.location ||
+
+                "—",
+
+            delivery_point:
+
+                order.delivery_point ||
+
+                order.deliveryPoint ||
+
+                order.point_livraison ||
+
+                "—",
+
+            delivery_note:
+
+                order.delivery_note ||
+
+                order.deliveryNote ||
+
+                order.note_livraison ||
+
+                "",
+
+            subtotal:
+
+                Number(
+
+                    order.subtotal ??
+
+                    order.sous_total ??
+
+                    0
+
+                ),
+
+            delivery_fee:
+
+                Number(
+
+                    order.delivery_fee ??
+
+                    order.deliveryFee ??
+
+                    order.frais_livraison ??
+
+                    0
+
+                ),
+
+            total:
+
+                Number(
+
+                    order.total ??
+
+                    order.total_amount ??
+
+                    order.montant_total ??
+
+                    0
+
+                ),
+
+            status:
+
+                order.status ||
+
+                order.order_status ||
+
+                "pending",
+
+            created_at:
+
+                order.created_at ||
+
+                order.createdAt,
+
+            updated_at:
+
+                order.updated_at ||
+
+                order.updatedAt,
+
+            items: Array.isArray(items) ? items : [],
+
+            tracking: Array.isArray(tracking) ? tracking : []
+
+        };
+
+    }
+
+    function extractOrders(data) {
+
+        if (Array.isArray(data)) {
+
+            return data.map(normalizeOrder).filter(Boolean);
+
+        }
+
+        if (data && typeof data === "object") {
+
+            if (Array.isArray(data.orders)) {
+
+                return data.orders.map(normalizeOrder).filter(Boolean);
+
+            }
+
+            if (Array.isArray(data.data)) {
+
+                return data.data.map(normalizeOrder).filter(Boolean);
+
+            }
+
+            if (data.id || data.order_id) {
+
+                return [normalizeOrder(data)];
+
+            }
+
+        }
+
+        return [];
+
+    }
+
+    async function loadOrders() {
+
+        const container = $("#ordersContainer");
+
+        container.innerHTML = `
+
+            <div class="state">
+
+                <div class="loading-spinner"></div>
+
+                <strong>Chargement des commandes</strong>
+
+                <p>Veuillez patienter.</p>
+
+            </div>
+
+        `;
+
+        try {
+
+            const data = await callRPC("admin_get_orders");
+
+            allOrders = extractOrders(data);
+
+            allOrders.sort((a, b) => {
+
+                return new Date(b.created_at || 0) - new Date(a.created_at || 0);
+
+            });
+
+            applyFilters();
+
+        } catch (error) {
+
+            console.error(error);
+
+            container.innerHTML = `
+
+                <div class="error-box">
+
+                    Impossible de charger les commandes.
+
+                    ${escapeHTML(error.message)}
+
+                </div>
+
+            `;
+
+            $("#ordersCount").textContent = "Erreur";
+
+        }
+
+    }
+
+    function applyFilters() {
+
+        const search = normalizeText($("#searchInput").value.trim());
+
+        const status = $("#statusFilter").value;
+
+        const dateFilter = $("#dateFilter").value;
+
+        const now = new Date();
+
+        filteredOrders = allOrders.filter(order => {
+
+            const searchContent = normalizeText(
+
+                [
+
+                    order.order_number,
+
+                    order.customer_name,
+
+                    order.customer_phone
+
+                ].join(" ")
+
+            );
+
+            if (search && !searchContent.includes(search)) {
+
+                return false;
+
+            }
+
+            if (status && order.status !== status) {
+
+                return false;
+
+            }
+
+            if (dateFilter) {
+
+                const created = new Date(order.created_at);
+
+                if (Number.isNaN(created.getTime())) {
+
+                    return false;
+
+                }
+
+                if (dateFilter === "today") {
+
+                    const sameDay =
+
+                        created.getFullYear() === now.getFullYear() &&
+
+                        created.getMonth() === now.getMonth() &&
+
+                        created.getDate() === now.getDate();
+
+                    if (!sameDay) {
+
+                        return false;
+
+                    }
+
+                }
+
+                if (dateFilter === "7") {
+
+                    const limit = new Date();
+
+                    limit.setDate(limit.getDate() - 7);
+
+                    if (created < limit) {
+
+                        return false;
+
+                    }
+
+                }
+
+                if (dateFilter === "30") {
+
+                    const limit = new Date();
+
+                    limit.setDate(limit.getDate() - 30);
+
+                    if (created < limit) {
+
+                        return false;
+
+                    }
+
+                }
+
+            }
+
+            return true;
+
+        });
+
+        renderOrders();
+
+    }
+
+    function renderOrders() {
+
+        const container = $("#ordersContainer");
+
+        $("#ordersCount").textContent =
+
+            `${filteredOrders.length} commande${filteredOrders.length > 1 ? "s" : ""}`;
+
+        if (!filteredOrders.length) {
+
+            container.innerHTML = `
+
+                <div class="state">
+
+                    <strong>Aucune commande trouvée</strong>
+
+                    <p>Aucune commande ne correspond aux filtres sélectionnés.</p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+        const rows = filteredOrders.map(order => {
+
+            const status = order.status || "pending";
+
+            return `
+
+                <tr>
+
+                    <td>
+
+                        <div class="order-number">
+
+                            ${escapeHTML(order.order_number)}
+
+                        </div>
+
+                    </td>
+
+                    <td>
+
+                        <div class="customer-name">
+
+                            ${escapeHTML(order.customer_name)}
+
+                        </div>
+
+                        <div class="customer-phone">
+
+                            ${escapeHTML(order.customer_phone)}
+
+                        </div>
+
+                    </td>
+
+                    <td>
+
+                        <div class="date">
+
+                            ${formatDate(order.created_at)}
+
+                        </div>
+
+                    </td>
+
+                    <td>
+
+                        <div class="amount">
+
+                            ${formatPrice(order.total)}
+
+                        </div>
+
+                    </td>
+
+                    <td>
+
+                        <span class="status ${statusClasses[status] || "status-pending"}">
+
+                            ${escapeHTML(statusLabels[status] || status)}
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <button
+
+                            class="action-btn"
+
+                            onclick="openOrder('${escapeHTML(order.id)}')"
+
+                        >
+
+                            Voir le détail
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }).join("");
+
+        container.innerHTML = `
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Commande</th>
+
+                            <th>Cliente</th>
+
+                            <th>Date</th>
+
+                            <th>Total</th>
+
+                            <th>Statut</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        ${rows}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        `;
+
+    }
+
+    function findOrderById(id) {
+
+        return allOrders.find(order => String(order.id) === String(id));
+
+    }
+
+    function getItemName(item) {
+
+        return (
+
+            item.product_name ||
+
+            item.productName ||
+
+            item.name ||
+
+            item.nom_produit ||
+
+            "Produit"
+
+        );
+
+    }
+
+    function getItemQuantity(item) {
+
+        return Number(
+
+            item.quantity ??
+
+            item.qty ??
+
+            item.quantite ??
+
+            1
+
+        );
+
+    }
+
+    function getItemPrice(item) {
+
+        return Number(
+
+            item.unit_price ??
+
+            item.unitPrice ??
+
+            item.price ??
+
+            item.prix_unitaire ??
+
+            0
+
+        );
+
+    }
+
+    function getItemSize(item) {
+
+        return (
+
+            item.size ||
+
+            item.taille ||
+
+            ""
+
+        );
+
+    }
+
+    function getItemColor(item) {
+
+        return (
+
+            item.color ||
+
+            item.couleur ||
+
+            ""
+
+        );
+
+    }
+
+    function renderItems(items) {
+
+        if (!Array.isArray(items) || !items.length) {
+
+            return `
+
+                <div class="state" style="padding:30px;">
+
+                    <strong>Aucun article disponible</strong>
+
+                    <p>Les détails des articles ne sont pas disponibles.</p>
+
+                </div>
+
+            `;
+
+        }
+
+        const rows = items.map(item => {
+
+            const name = getItemName(item);
+
+            const quantity = getItemQuantity(item);
+
+            const price = getItemPrice(item);
+
+            const size = getItemSize(item);
+
+            const color = getItemColor(item);
+
+            const options = [
+
+                size ? `Taille : ${escapeHTML(size)}` : "",
+
+                color ? `Couleur : ${escapeHTML(color)}` : ""
+
+            ].filter(Boolean).join(" · ");
+
+            return `
+
+                <div class="item-row">
+
+                    <div>
+
+                        <div class="item-name">
+
+                            ${escapeHTML(name)}
+
+                        </div>
+
+                        ${
+
+                            options
+
+                                ? `<div class="item-meta">${options}</div>`
+
+                                : ""
+
+                        }
+
+                    </div>
+
+                    <div class="item-cell">
+
+                        ${quantity}
+
+                    </div>
+
+                    <div class="item-cell">
+
+                        ${formatPrice(price)}
+
+                    </div>
+
+                    <div class="item-cell">
+
+                        ${formatPrice(price * quantity)}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+        return `
+
+            <div class="item-row item-header">
+
+                <div>Produit</div>
+
+                <div>Qté</div>
+
+                <div>Prix</div>
+
+                <div>Total</div>
+
+            </div>
+
+            ${rows}
+
+        `;
+
+    }
+
+    function renderTracking(tracking) {
+
+        if (!Array.isArray(tracking) || !tracking.length) {
+
+            return `
+
+                <div class="state" style="padding:25px;">
+
+                    <strong>Aucun suivi disponible</strong>
+
+                    <p>L'historique de suivi sera affiché ici.</p>
+
+                </div>
+
+            `;
+
+        }
+
+        const sorted = [...tracking].sort((a, b) => {
+
+            return new Date(b.created_at || 0) - new Date(a.created_at || 0);
+
+        });
+
+        return `
+
+            <div class="tracking">
+
+                ${sorted.map(event => {
+
+                    const status = event.status || "pending";
+
+                    return `
+
+                        <div class="tracking-item">
+
+                            <span class="tracking-dot"></span>
+
+                            <div class="tracking-status">
+
+                                ${escapeHTML(statusLabels[status] || status)}
+
+                            </div>
+
+                            <div class="tracking-message">
+
+                                ${escapeHTML(
+
+                                    event.message ||
+
+                                    event.description ||
+
+                                    ""
+
+                                )}
+
+                            </div>
+
+                            <div class="tracking-date">
+
+                                ${formatDate(event.created_at)}
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }).join("")}
+
+            </div>
+
+        `;
+
+    }
+
+    function openOrder(id) {
+
+        const order = findOrderById(id);
+
+        if (!order) {
+
+            showToast("Commande introuvable.", true);
+
+            return;
+
+        }
+
+        currentOrder = order;
+
+        $("#modalOrderNumber").textContent =
+
+            order.order_number || "Commande";
+
+        $("#modalOrderDate").textContent =
+
+            `Créée le ${formatDate(order.created_at)}`;
+
+        $("#modalBody").innerHTML = `
+
+            <div class="detail-grid">
+
+                <div class="detail-box">
+
+                    <span class="label">Cliente</span>
+
+                    <div class="value">
+
+                        ${escapeHTML(order.customer_name)}
+
+                    </div>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <span class="label">Téléphone</span>
+
+                    <div class="value">
+
+                        ${escapeHTML(order.customer_phone)}
+
+                    </div>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <span class="label">Ville</span>
+
+                    <div class="value">
+
+                        ${escapeHTML(order.city)}
+
+                    </div>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <span class="label">Quartier</span>
+
+                    <div class="value">
+
+                        ${escapeHTML(order.district)}
+
+                    </div>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <span class="label">Point de livraison</span>
+
+                    <div class="value">
+
+                        ${escapeHTML(order.delivery_point || "Non renseigné")}
+
+                    </div>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <span class="label">Adresse / localisation</span>
+
+                    <div class="value">
+
+                        ${escapeHTML(order.address)}
+
+                    </div>
+
+                </div>
+
+                <div class="detail-box full">
+
+                    <span class="label">Note de livraison</span>
+
+                    <div class="value">
+
+                        ${escapeHTML(order.delivery_note || "Aucune note")}
+
+                    </div>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <span class="label">Statut actuel</span>
+
+                    <div class="value">
+
+                        <span class="status ${statusClasses[order.status] || "status-pending"}">
+
+                            ${escapeHTML(statusLabels[order.status] || order.status)}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <span class="label">Numéro de commande</span>
+
+                    <div class="value">
+
+                        ${escapeHTML(order.order_number)}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="section-title">
+
+                Articles commandés
+
+            </div>
+
+            <div class="items-box">
+
+                ${renderItems(order.items)}
+
+            </div>
+
+            <div class="totals">
+
+                <div class="total-line">
+
+                    <span>Sous-total</span>
+
+                    <strong>${formatPrice(order.subtotal)}</strong>
+
+                </div>
+
+                <div class="total-line">
+
+                    <span>Livraison</span>
+
+                    <strong>${formatPrice(order.delivery_fee)}</strong>
+
+                </div>
+
+                <div class="total-line total-final">
+
+                    <span>Total</span>
+
+                    <strong>${formatPrice(order.total)}</strong>
+
+                </div>
+
+            </div>
+
+            <div class="section-title">
+
+                Historique du suivi
+
+            </div>
+
+            ${renderTracking(order.tracking)}
+
+            <div class="update-area">
+
+                <div class="section-title">
+
+                    Modifier le statut
+
+                </div>
+
+                <div class="update-grid">
+
+                    <div class="field">
+
+                        <label for="modalStatus">
+
+                            Nouveau statut
+
+                        </label>
+
+                        <select class="select" id="modalStatus">
+
+                            <option value="pending">
+
+                                En attente
+
+                            </option>
+
+                            <option value="confirmed">
+
+                                Confirmée
+
+                            </option>
+
+                            <option value="preparing">
+
+                                En préparation
+
+                            </option>
+
+                            <option value="shipping">
+
+                                En livraison
+
+                            </option>
+
+                            <option value="delivered">
+
+                                Livrée
+
+                            </option>
+
+                            <option value="cancelled">
+
+                                Annulée
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="field">
+
+                        <label for="modalMessage">
+
+                            Message de suivi
+
+                        </label>
+
+                        <textarea
+
+                            class="textarea"
+
+                            id="modalMessage"
+
+                            rows="3"
+
+                            placeholder="Message facultatif visible dans le suivi de la cliente"
+
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="update-actions">
+
+                    <button class="btn" id="cancelUpdateBtn">
+
+                        Annuler
+
+                    </button>
+
+                    <button class="btn btn-primary" id="saveStatusBtn">
+
+                        Enregistrer le statut
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+        $("#modalStatus").value = order.status || "pending";
+
+        $("#saveStatusBtn").addEventListener("click", updateOrderStatus);
+
+        $("#cancelUpdateBtn").addEventListener("click", () => {
+
+            $("#modalStatus").value = currentOrder.status || "pending";
+
+            $("#modalMessage").value = "";
+
+        });
+
+        $("#modalBackdrop").classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+    async function updateOrderStatus() {
+
+        if (!currentOrder || !currentOrder.id) {
+
+            showToast("Commande invalide.", true);
+
+            return;
+
+        }
+
+        const newStatus = $("#modalStatus").value;
+
+        const message = $("#modalMessage").value.trim();
+
+        const saveButton = $("#saveStatusBtn");
+
+        if (!statusLabels[newStatus]) {
+
+            showToast("Statut invalide.", true);
+
+            return;
+
+        }
+
+        const previousStatus = currentOrder.status;
+
+        if (newStatus === previousStatus && !message) {
+
+            showToast("Aucune modification à enregistrer.", true);
+
+            return;
+
+        }
+
+        saveButton.disabled = true;
+
+        saveButton.textContent = "Enregistrement...";
+
+        try {
+
+            await callRPC("admin_update_order_status", {
+
+                p_order_id: currentOrder.id,
+
+                p_status: newStatus,
+
+                p_message: message || null
+
+            });
+
+            showToast("Statut de la commande mis à jour.");
+
+            await loadOrders();
+
+            const updated = findOrderById(currentOrder.id);
+
+            if (updated) {
+
+                currentOrder = updated;
+
+                openOrder(updated.id);
+
+            } else {
+
+                closeModal();
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            showToast(
+
+                error.message || "Impossible de modifier le statut.",
+
+                true
+
+            );
+
+        } finally {
+
+            saveButton.disabled = false;
+
+            saveButton.textContent = "Enregistrer le statut";
+
+        }
+
+    }
+
+    function closeModal() {
+
+        $("#modalBackdrop").classList.remove("show");
+
+        document.body.style.overflow = "";
+
+        currentOrder = null;
+
+    }
+
+    function setupEvents() {
+
+        $("#searchInput").addEventListener("input", applyFilters);
+
+        $("#statusFilter").addEventListener("change", applyFilters);
+
+        $("#dateFilter").addEventListener("change", applyFilters);
+
+        $("#resetFilters").addEventListener("click", () => {
+
+            $("#searchInput").value = "";
+
+            $("#statusFilter").value = "";
+
+            $("#dateFilter").value = "";
+
+            applyFilters();
+
+        });
+
+        $("#refreshBtn").addEventListener("click", async () => {
+
+            const button = $("#refreshBtn");
+
+            button.disabled = true;
+
+            button.textContent = "Actualisation...";
+
+            try {
+
+                await loadOrders();
+
+                showToast("Commandes actualisées.");
+
+            } catch {
+
+                showToast("Erreur lors de l'actualisation.", true);
+
+            } finally {
+
+                button.disabled = false;
+
+                button.textContent = "Actualiser";
+
+            }
+
+        });
+
+        $("#closeModal").addEventListener("click", closeModal);
+
+        $("#modalBackdrop").addEventListener("click", event => {
+
+            if (event.target === $("#modalBackdrop")) {
+
+                closeModal();
+
+            }
+
+        });
+
+        document.addEventListener("keydown", event => {
+
+            if (event.key === "Escape") {
+
+                closeModal();
+
+            }
+
+        });
+
+        $("#logoutBtn").addEventListener("click", () => {
+
+            localStorage.removeItem("ninice_admin_access_token");
+
+            localStorage.removeItem("ninice_admin_refresh_token");
+
+            localStorage.removeItem("ninice_admin_email");
+
+            window.location.href = "admin.html";
+
+        });
+
+        const menuBtn = $("#menuBtn");
+
+        const sidebar = $("#sidebar");
+
+        const overlay = $("#mobileOverlay");
+
+        menuBtn.addEventListener("click", () => {
+
+            sidebar.classList.toggle("open");
+
+            overlay.classList.toggle("show");
+
+        });
+
+        overlay.addEventListener("click", () => {
+
+            sidebar.classList.remove("open");
+
+            overlay.classList.remove("show");
+
+        });
+
+        document.querySelectorAll(".sidebar a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                sidebar.classList.remove("open");
+
+                overlay.classList.remove("show");
+
+            });
+
+        });
+
+    }
+
+    async function init() {
+
+        setupEvents();
+
+        const isAdmin = await verifyAdmin();
+
+        if (!isAdmin) {
+
+            return;
+
+        }
+
+        await loadOrders();
+
+    }
+
+    window.openOrder = openOrder;
+
+    init();
+
+</script>
+
+</body>
+
+</html>
