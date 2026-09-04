@@ -1,0 +1,4961 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+
+        name="viewport"
+
+        content="width=device-width, initial-scale=1.0"
+
+    >
+
+    <title>
+
+        Suivre ma commande | NINICE BOUTIQUE
+
+    </title>
+
+    <meta
+
+        name="description"
+
+        content="Suivez l'évolution de votre commande NINICE BOUTIQUE."
+
+    >
+
+    <meta
+
+        name="theme-color"
+
+        content="#6d28d9"
+
+    >
+
+    <link
+
+        rel="preconnect"
+
+        href="https://fonts.googleapis.com"
+
+    >
+
+    <link
+
+        rel="preconnect"
+
+        href="https://fonts.gstatic.com"
+
+        crossorigin
+
+    >
+
+    <link
+
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+
+        rel="stylesheet"
+
+    >
+
+    <style>
+
+        :root {
+
+            --violet: #6d28d9;
+
+            --violet-dark: #4c1d95;
+
+            --violet-light: #f3e8ff;
+
+            --soft: #faf7ff;
+
+            --white: #ffffff;
+
+            --black: #17151c;
+
+            --text: #27232d;
+
+            --muted: #77727f;
+
+            --border: #e9e4ee;
+
+            --danger: #c62828;
+
+            --success: #18864b;
+
+            --orange: #b45309;
+
+            --blue: #2563eb;
+
+            --shadow:
+
+                0 12px 40px
+
+                rgba(
+
+                    76,
+
+                    29,
+
+                    149,
+
+                    0.09
+
+                );
+
+        }
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+        body {
+
+            font-family:
+
+                "DM Sans",
+
+                sans-serif;
+
+            color: var(--text);
+
+            background:
+
+                var(--white);
+
+            line-height: 1.6;
+
+            padding-bottom: 76px;
+
+        }
+
+        body.no-scroll {
+
+            overflow: hidden;
+
+        }
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+        button,
+
+        input {
+
+            font: inherit;
+
+        }
+
+        button {
+
+            cursor: pointer;
+
+        }
+
+        img {
+
+            display: block;
+
+            max-width: 100%;
+
+        }
+
+        .container {
+
+            width:
+
+                min(
+
+                    1180px,
+
+                    calc(100% - 32px)
+
+                );
+
+            margin:
+
+                0 auto;
+
+        }
+
+        /* ========================================
+
+           HEADER
+
+        ======================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+
+                rgba(
+
+                    255,
+
+                    255,
+
+                    255,
+
+                    0.96
+
+                );
+
+            backdrop-filter:
+
+                blur(14px);
+
+            border-bottom:
+
+                1px solid
+
+                var(--border);
+
+        }
+
+        .header-inner {
+
+            min-height: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content:
+
+                space-between;
+
+            gap: 25px;
+
+        }
+
+        .logo {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            flex-shrink: 0;
+
+        }
+
+        .logo-mark {
+
+            width: 43px;
+
+            height: 43px;
+
+            border-radius: 12px;
+
+            background:
+
+                var(--violet);
+
+            display: grid;
+
+            place-items: center;
+
+            color: white;
+
+            box-shadow:
+
+                0 7px 18px
+
+                rgba(
+
+                    109,
+
+                    40,
+
+                    217,
+
+                    0.20
+
+                );
+
+        }
+
+        .logo-mark svg {
+
+            width: 25px;
+
+            height: 25px;
+
+        }
+
+        .logo-text {
+
+            display: flex;
+
+            flex-direction:
+
+                column;
+
+            line-height: 1;
+
+        }
+
+        .logo-text strong {
+
+            font-size: 18px;
+
+            letter-spacing:
+
+                1.2px;
+
+            color:
+
+                var(--black);
+
+        }
+
+        .logo-text span {
+
+            margin-top: 4px;
+
+            font-size: 8px;
+
+            letter-spacing:
+
+                2.5px;
+
+            color:
+
+                var(--violet);
+
+            font-weight: 700;
+
+        }
+
+        .desktop-nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+        }
+
+        .desktop-nav a {
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #595360;
+
+            position: relative;
+
+            padding:
+
+                27px 0;
+
+        }
+
+        .desktop-nav a:hover,
+
+        .desktop-nav a.active {
+
+            color:
+
+                var(--violet);
+
+        }
+
+        .desktop-nav a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            bottom: 18px;
+
+            left: 0;
+
+            right: 0;
+
+            height: 2px;
+
+            background:
+
+                var(--violet);
+
+            border-radius: 20px;
+
+        }
+
+        .header-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+        .icon-button {
+
+            position: relative;
+
+            width: 43px;
+
+            height: 43px;
+
+            border: 0;
+
+            border-radius: 12px;
+
+            background:
+
+                transparent;
+
+            display: grid;
+
+            place-items: center;
+
+            color:
+
+                var(--black);
+
+        }
+
+        .icon-button:hover {
+
+            background:
+
+                var(--violet-light);
+
+            color:
+
+                var(--violet);
+
+        }
+
+        .icon-button svg {
+
+            width: 21px;
+
+            height: 21px;
+
+        }
+
+        .cart-count {
+
+            position: absolute;
+
+            top: 3px;
+
+            right: 1px;
+
+            min-width: 18px;
+
+            height: 18px;
+
+            padding:
+
+                0 5px;
+
+            border-radius: 30px;
+
+            background:
+
+                var(--violet);
+
+            color: white;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            display: grid;
+
+            place-items: center;
+
+        }
+
+        .menu-button {
+
+            display: none;
+
+        }
+
+        /* ========================================
+
+           MOBILE MENU
+
+        ======================================== */
+
+        .mobile-menu {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            pointer-events: none;
+
+            visibility: hidden;
+
+        }
+
+        .mobile-menu.open {
+
+            pointer-events: auto;
+
+            visibility: visible;
+
+        }
+
+        .mobile-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                rgba(
+
+                    23,
+
+                    21,
+
+                    28,
+
+                    0.45
+
+                );
+
+            opacity: 0;
+
+            transition:
+
+                0.25s;
+
+        }
+
+        .mobile-menu.open
+
+        .mobile-overlay {
+
+            opacity: 1;
+
+        }
+
+        .mobile-panel {
+
+            position: absolute;
+
+            top: 0;
+
+            right: 0;
+
+            width:
+
+                min(
+
+                    330px,
+
+                    88%
+
+                );
+
+            height: 100%;
+
+            background:
+
+                white;
+
+            padding: 25px;
+
+            transform:
+
+                translateX(100%);
+
+            transition:
+
+                transform
+
+                0.3s
+
+                ease;
+
+            box-shadow:
+
+                -15px 0
+
+                40px
+
+                rgba(
+
+                    0,
+
+                    0,
+
+                    0,
+
+                    0.12
+
+                );
+
+        }
+
+        .mobile-menu.open
+
+        .mobile-panel {
+
+            transform:
+
+                translateX(0);
+
+        }
+
+        .mobile-menu-top {
+
+            display: flex;
+
+            justify-content:
+
+                space-between;
+
+            align-items: center;
+
+            margin-bottom:
+
+                35px;
+
+        }
+
+        .mobile-panel nav {
+
+            display: flex;
+
+            flex-direction:
+
+                column;
+
+        }
+
+        .mobile-panel nav a {
+
+            padding:
+
+                17px 0;
+
+            border-bottom:
+
+                1px solid
+
+                var(--border);
+
+            font-weight: 600;
+
+        }
+
+        .mobile-panel nav a.active {
+
+            color:
+
+                var(--violet);
+
+        }
+
+        /* ========================================
+
+           PAGE HEADER
+
+        ======================================== */
+
+        .page-header {
+
+            padding:
+
+                55px 0 35px;
+
+            background:
+
+                var(--soft);
+
+            border-bottom:
+
+                1px solid
+
+                var(--border);
+
+        }
+
+        .breadcrumb {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            font-size: 13px;
+
+            color:
+
+                var(--muted);
+
+            margin-bottom:
+
+                25px;
+
+        }
+
+        .breadcrumb a:hover {
+
+            color:
+
+                var(--violet);
+
+        }
+
+        .page-header h1 {
+
+            font-family:
+
+                "Playfair Display",
+
+                serif;
+
+            color:
+
+                var(--black);
+
+            font-size:
+
+                clamp(
+
+                    38px,
+
+                    5vw,
+
+                    55px
+
+                );
+
+            line-height: 1.1;
+
+        }
+
+        .page-header p {
+
+            color:
+
+                var(--muted);
+
+            margin-top: 10px;
+
+            font-size: 14px;
+
+        }
+
+        /* ========================================
+
+           TRACKING
+
+        ======================================== */
+
+        .tracking-section {
+
+            padding:
+
+                55px 0 90px;
+
+        }
+
+        .tracking-layout {
+
+            max-width:
+
+                850px;
+
+            margin:
+
+                0 auto;
+
+        }
+
+        .search-card {
+
+            background:
+
+                white;
+
+            border:
+
+                1px solid
+
+                var(--border);
+
+            border-radius:
+
+                18px;
+
+            padding:
+
+                30px;
+
+            box-shadow:
+
+                var(--shadow);
+
+        }
+
+        .search-card h2 {
+
+            font-family:
+
+                "Playfair Display",
+
+                serif;
+
+            color:
+
+                var(--black);
+
+            font-size: 29px;
+
+            margin-bottom:
+
+                7px;
+
+        }
+
+        .search-card > p {
+
+            color:
+
+                var(--muted);
+
+            font-size: 13px;
+
+            margin-bottom:
+
+                25px;
+
+        }
+
+        .form-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                1fr 1fr;
+
+            gap: 17px;
+
+        }
+
+        .form-group {
+
+            display: flex;
+
+            flex-direction:
+
+                column;
+
+            gap: 7px;
+
+        }
+
+        label {
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color:
+
+                var(--text);
+
+        }
+
+        label span {
+
+            color:
+
+                var(--violet);
+
+        }
+
+        input {
+
+            width: 100%;
+
+            height: 49px;
+
+            padding:
+
+                0 14px;
+
+            border:
+
+                1px solid
+
+                var(--border);
+
+            background:
+
+                white;
+
+            color:
+
+                var(--text);
+
+            border-radius:
+
+                10px;
+
+            outline:
+
+                none;
+
+            transition:
+
+                0.2s;
+
+        }
+
+        input::placeholder {
+
+            color:
+
+                #aaa4af;
+
+        }
+
+        input:focus {
+
+            border-color:
+
+                var(--violet);
+
+            box-shadow:
+
+                0 0 0 3px
+
+                rgba(
+
+                    109,
+
+                    40,
+
+                    217,
+
+                    0.08
+
+                );
+
+        }
+
+        .search-button {
+
+            width: 100%;
+
+            height: 50px;
+
+            margin-top:
+
+                19px;
+
+            border: 0;
+
+            border-radius:
+
+                10px;
+
+            background:
+
+                var(--violet);
+
+            color:
+
+                white;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition:
+
+                0.2s;
+
+        }
+
+        .search-button:hover {
+
+            background:
+
+                var(--violet-dark);
+
+            transform:
+
+                translateY(-1px);
+
+        }
+
+        .search-button:disabled {
+
+            opacity:
+
+                0.65;
+
+            cursor:
+
+                not-allowed;
+
+            transform:
+
+                none;
+
+        }
+
+        .form-help {
+
+            margin-top:
+
+                13px;
+
+            color:
+
+                var(--muted);
+
+            font-size: 10px;
+
+            text-align:
+
+                center;
+
+        }
+
+        /* ========================================
+
+           RESULT
+
+        ======================================== */
+
+        #result {
+
+            margin-top:
+
+                30px;
+
+        }
+
+        .result-card {
+
+            border:
+
+                1px solid
+
+                var(--border);
+
+            border-radius:
+
+                18px;
+
+            background:
+
+                white;
+
+            box-shadow:
+
+                var(--shadow);
+
+            overflow:
+
+                hidden;
+
+        }
+
+        .result-header {
+
+            padding:
+
+                25px 28px;
+
+            border-bottom:
+
+                1px solid
+
+                var(--border);
+
+            display: flex;
+
+            justify-content:
+
+                space-between;
+
+            align-items:
+
+                center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+        }
+
+        .result-header-label {
+
+            color:
+
+                var(--muted);
+
+            font-size: 10px;
+
+            text-transform:
+
+                uppercase;
+
+            letter-spacing:
+
+                1.2px;
+
+            font-weight: 700;
+
+        }
+
+        .result-order-number {
+
+            color:
+
+                var(--black);
+
+            font-size: 19px;
+
+            font-weight: 700;
+
+            margin-top:
+
+                3px;
+
+        }
+
+        .status-badge {
+
+            display:
+
+                inline-flex;
+
+            align-items:
+
+                center;
+
+            justify-content:
+
+                center;
+
+            min-height:
+
+                34px;
+
+            padding:
+
+                0 13px;
+
+            border-radius:
+
+                30px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            background:
+
+                var(--violet-light);
+
+            color:
+
+                var(--violet);
+
+        }
+
+        .status-badge.confirmed {
+
+            background:
+
+                #e9f8ef;
+
+            color:
+
+                var(--success);
+
+        }
+
+        .status-badge.preparing {
+
+            background:
+
+                #fff7df;
+
+            color:
+
+                var(--orange);
+
+        }
+
+        .status-badge.shipping {
+
+            background:
+
+                #eaf1ff;
+
+            color:
+
+                var(--blue);
+
+        }
+
+        .status-badge.delivered {
+
+            background:
+
+                #e9f8ef;
+
+            color:
+
+                var(--success);
+
+        }
+
+        .status-badge.cancelled {
+
+            background:
+
+                #fdecec;
+
+            color:
+
+                var(--danger);
+
+        }
+
+        /* ========================================
+
+           STATUS STEPS
+
+        ======================================== */
+
+        .status-progress {
+
+            padding:
+
+                35px 28px;
+
+            border-bottom:
+
+                1px solid
+
+                var(--border);
+
+        }
+
+        .progress-line {
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(5, 1fr);
+
+            gap: 0;
+
+        }
+
+        .progress-line::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 16px;
+
+            left: 10%;
+
+            right: 10%;
+
+            height: 2px;
+
+            background:
+
+                var(--border);
+
+            z-index: 0;
+
+        }
+
+        .progress-fill {
+
+            position: absolute;
+
+            top: 16px;
+
+            left: 10%;
+
+            height: 2px;
+
+            background:
+
+                var(--violet);
+
+            z-index: 1;
+
+            width: 0%;
+
+            transition:
+
+                width
+
+                0.5s
+
+                ease;
+
+        }
+
+        .progress-step {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            flex-direction:
+
+                column;
+
+            align-items: center;
+
+            text-align: center;
+
+            gap: 8px;
+
+        }
+
+        .step-circle {
+
+            width: 34px;
+
+            height: 34px;
+
+            border-radius: 50%;
+
+            border:
+
+                2px solid
+
+                var(--border);
+
+            background:
+
+                white;
+
+            display: grid;
+
+            place-items: center;
+
+            color:
+
+                var(--muted);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
+
+        .progress-step.completed
+
+        .step-circle,
+
+        .progress-step.current
+
+        .step-circle {
+
+            background:
+
+                var(--violet);
+
+            border-color:
+
+                var(--violet);
+
+            color:
+
+                white;
+
+        }
+
+        .progress-step.current
+
+        .step-circle {
+
+            box-shadow:
+
+                0 0 0 5px
+
+                var(--violet-light);
+
+        }
+
+        .step-label {
+
+            font-size: 10px;
+
+            color:
+
+                var(--muted);
+
+            font-weight: 600;
+
+            max-width:
+
+                85px;
+
+        }
+
+        .progress-step.completed
+
+        .step-label,
+
+        .progress-step.current
+
+        .step-label {
+
+            color:
+
+                var(--text);
+
+        }
+
+        /* ========================================
+
+           TRACKING HISTORY
+
+        ======================================== */
+
+        .history {
+
+            padding:
+
+                30px 28px;
+
+        }
+
+        .history-title {
+
+            font-family:
+
+                "Playfair Display",
+
+                serif;
+
+            font-size:
+
+                25px;
+
+            color:
+
+                var(--black);
+
+            margin-bottom:
+
+                25px;
+
+        }
+
+        .timeline {
+
+            position: relative;
+
+            display: flex;
+
+            flex-direction:
+
+                column;
+
+            gap: 0;
+
+        }
+
+        .timeline-item {
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+
+                25px
+
+                minmax(0, 1fr);
+
+            gap: 15px;
+
+            padding-bottom:
+
+                25px;
+
+        }
+
+        .timeline-item:last-child {
+
+            padding-bottom: 0;
+
+        }
+
+        .timeline-item:not(:last-child)
+
+        .timeline-marker::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 22px;
+
+            left: 50%;
+
+            transform:
+
+                translateX(-50%);
+
+            width: 1px;
+
+            height: calc(
+
+                100% + 1px
+
+            );
+
+            background:
+
+                var(--border);
+
+        }
+
+        .timeline-marker {
+
+            position: relative;
+
+            width: 25px;
+
+            height: 25px;
+
+            border-radius: 50%;
+
+            background:
+
+                var(--violet-light);
+
+            color:
+
+                var(--violet);
+
+            display: grid;
+
+            place-items: center;
+
+            z-index: 2;
+
+        }
+
+        .timeline-marker svg {
+
+            width: 12px;
+
+            height: 12px;
+
+        }
+
+        .timeline-content {
+
+            padding-top:
+
+                1px;
+
+        }
+
+        .timeline-status {
+
+            font-size:
+
+                13px;
+
+            font-weight:
+
+                700;
+
+            color:
+
+                var(--black);
+
+        }
+
+        .timeline-message {
+
+            color:
+
+                var(--muted);
+
+            font-size:
+
+                12px;
+
+            margin-top:
+
+                3px;
+
+        }
+
+        .timeline-date {
+
+            color:
+
+                #aaa4af;
+
+            font-size:
+
+                10px;
+
+            margin-top:
+
+                5px;
+
+        }
+
+        /* ========================================
+
+           ERROR
+
+        ======================================== */
+
+        .error-card {
+
+            padding:
+
+                25px;
+
+            border:
+
+                1px solid
+
+                #f3d0d0;
+
+            background:
+
+                #fff8f8;
+
+            border-radius:
+
+                14px;
+
+            color:
+
+                var(--danger);
+
+            text-align:
+
+                center;
+
+        }
+
+        .error-card strong {
+
+            display:
+
+                block;
+
+            font-size:
+
+                14px;
+
+            margin-bottom:
+
+                4px;
+
+        }
+
+        .error-card p {
+
+            font-size:
+
+                12px;
+
+            color:
+
+                #956363;
+
+        }
+
+        /* ========================================
+
+           EMPTY
+
+        ======================================== */
+
+        .empty-state {
+
+            text-align:
+
+                center;
+
+            padding:
+
+                65px 25px;
+
+            border:
+
+                1px dashed
+
+                var(--border);
+
+            border-radius:
+
+                18px;
+
+            background:
+
+                var(--soft);
+
+        }
+
+        .empty-icon {
+
+            width:
+
+                65px;
+
+            height:
+
+                65px;
+
+            margin:
+
+                0 auto 20px;
+
+            border-radius:
+
+                18px;
+
+            background:
+
+                var(--violet-light);
+
+            color:
+
+                var(--violet);
+
+            display:
+
+                grid;
+
+            place-items:
+
+                center;
+
+        }
+
+        .empty-icon svg {
+
+            width:
+
+                30px;
+
+            height:
+
+                30px;
+
+        }
+
+        .empty-state h2 {
+
+            font-family:
+
+                "Playfair Display",
+
+                serif;
+
+            color:
+
+                var(--black);
+
+            font-size:
+
+                30px;
+
+            margin-bottom:
+
+                8px;
+
+        }
+
+        .empty-state p {
+
+            color:
+
+                var(--muted);
+
+            font-size:
+
+                13px;
+
+            margin-bottom:
+
+                22px;
+
+        }
+
+        .shop-button {
+
+            display:
+
+                inline-flex;
+
+            align-items:
+
+                center;
+
+            justify-content:
+
+                center;
+
+            height:
+
+                46px;
+
+            padding:
+
+                0 22px;
+
+            border-radius:
+
+                10px;
+
+            background:
+
+                var(--violet);
+
+            color:
+
+                white;
+
+            font-size:
+
+                12px;
+
+            font-weight:
+
+                700;
+
+        }
+
+        .shop-button:hover {
+
+            background:
+
+                var(--violet-dark);
+
+        }
+
+        /* ========================================
+
+           FOOTER
+
+        ======================================== */
+
+        footer {
+
+            background:
+
+                #17131f;
+
+            color:
+
+                white;
+
+            padding:
+
+                60px 0 30px;
+
+        }
+
+        .footer-grid {
+
+            display:
+
+                grid;
+
+            grid-template-columns:
+
+                1.4fr 1fr 1fr 1fr;
+
+            gap:
+
+                45px;
+
+        }
+
+        .footer-brand p {
+
+            color:
+
+                #aaa4b1;
+
+            font-size:
+
+                13px;
+
+            max-width:
+
+                280px;
+
+            margin-top:
+
+                18px;
+
+        }
+
+        .footer-title {
+
+            font-size:
+
+                13px;
+
+            font-weight:
+
+                700;
+
+            margin-bottom:
+
+                17px;
+
+        }
+
+        .footer-links {
+
+            display:
+
+                flex;
+
+            flex-direction:
+
+                column;
+
+            gap:
+
+                11px;
+
+        }
+
+        .footer-links a {
+
+            color:
+
+                #aaa4b1;
+
+            font-size:
+
+                13px;
+
+        }
+
+        .footer-links a:hover {
+
+            color:
+
+                white;
+
+        }
+
+        .footer-bottom {
+
+            border-top:
+
+                1px solid
+
+                rgba(
+
+                    255,
+
+                    255,
+
+                    255,
+
+                    0.1
+
+                );
+
+            margin-top:
+
+                45px;
+
+            padding-top:
+
+                22px;
+
+            display:
+
+                flex;
+
+            justify-content:
+
+                space-between;
+
+            gap:
+
+                20px;
+
+            color:
+
+                #8e8895;
+
+            font-size:
+
+                12px;
+
+        }
+
+        /* ========================================
+
+           BOTTOM NAV
+
+        ======================================== */
+
+        .bottom-nav {
+
+            position:
+
+                fixed;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            z-index: 1500;
+
+            height: 68px;
+
+            background:
+
+                rgba(
+
+                    255,
+
+                    255,
+
+                    255,
+
+                    0.97
+
+                );
+
+            backdrop-filter:
+
+                blur(14px);
+
+            border-top:
+
+                1px solid
+
+                var(--border);
+
+            display:
+
+                none;
+
+            grid-template-columns:
+
+                repeat(3, 1fr);
+
+        }
+
+        .bottom-nav a {
+
+            display:
+
+                flex;
+
+            flex-direction:
+
+                column;
+
+            align-items:
+
+                center;
+
+            justify-content:
+
+                center;
+
+            gap:
+
+                4px;
+
+            color:
+
+                #77717e;
+
+            font-size:
+
+                10px;
+
+            font-weight:
+
+                600;
+
+        }
+
+        .bottom-nav a.active {
+
+            color:
+
+                var(--violet);
+
+        }
+
+        .bottom-nav svg {
+
+            width:
+
+                20px;
+
+            height:
+
+                20px;
+
+        }
+
+        /* ========================================
+
+           TOAST
+
+        ======================================== */
+
+        .toast {
+
+            position:
+
+                fixed;
+
+            left:
+
+                50%;
+
+            bottom:
+
+                92px;
+
+            transform:
+
+                translate(
+
+                    -50%,
+
+                    20px
+
+                );
+
+            background:
+
+                #211b2a;
+
+            color:
+
+                white;
+
+            padding:
+
+                13px 18px;
+
+            border-radius:
+
+                11px;
+
+            font-size:
+
+                13px;
+
+            opacity:
+
+                0;
+
+            pointer-events:
+
+                none;
+
+            transition:
+
+                0.25s ease;
+
+            z-index:
+
+                3000;
+
+            box-shadow:
+
+                0 12px 30px
+
+                rgba(
+
+                    0,
+
+                    0,
+
+                    0,
+
+                    0.2
+
+                );
+
+            white-space:
+
+                nowrap;
+
+        }
+
+        .toast.show {
+
+            opacity:
+
+                1;
+
+            transform:
+
+                translate(
+
+                    -50%,
+
+                    0
+
+                );
+
+        }
+
+        /* ========================================
+
+           RESPONSIVE
+
+        ======================================== */
+
+        @media (max-width: 1000px) {
+
+            .desktop-nav {
+
+                gap:
+
+                    18px;
+
+            }
+
+            .footer-grid {
+
+                grid-template-columns:
+
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+        @media (max-width: 760px) {
+
+            body {
+
+                padding-bottom:
+
+                    76px;
+
+            }
+
+            .container {
+
+                width:
+
+                    min(
+
+                        100% - 24px,
+
+                        600px
+
+                    );
+
+            }
+
+            .header-inner {
+
+                min-height:
+
+                    68px;
+
+            }
+
+            .desktop-nav {
+
+                display:
+
+                    none;
+
+            }
+
+            .menu-button {
+
+                display:
+
+                    grid;
+
+            }
+
+            .page-header {
+
+                padding:
+
+                    35px 0 30px;
+
+            }
+
+            .page-header h1 {
+
+                font-size:
+
+                    40px;
+
+            }
+
+            .tracking-section {
+
+                padding:
+
+                    35px 0 65px;
+
+            }
+
+            .search-card {
+
+                padding:
+
+                    22px 18px;
+
+            }
+
+            .form-grid {
+
+                grid-template-columns:
+
+                    1fr;
+
+            }
+
+            .result-header {
+
+                padding:
+
+                    20px;
+
+            }
+
+            .status-progress {
+
+                padding:
+
+                    28px 14px;
+
+            }
+
+            .progress-line {
+
+                grid-template-columns:
+
+                    repeat(5, 1fr);
+
+            }
+
+            .step-label {
+
+                font-size:
+
+                    8px;
+
+                max-width:
+
+                    60px;
+
+            }
+
+            .step-circle {
+
+                width:
+
+                    30px;
+
+                height:
+
+                    30px;
+
+                font-size:
+
+                    10px;
+
+            }
+
+            .progress-line::before {
+
+                top:
+
+                    14px;
+
+                left:
+
+                    9%;
+
+                right:
+
+                    9%;
+
+            }
+
+            .progress-fill {
+
+                top:
+
+                    14px;
+
+                left:
+
+                    9%;
+
+            }
+
+            .history {
+
+                padding:
+
+                    25px 20px;
+
+            }
+
+            .bottom-nav {
+
+                display:
+
+                    grid;
+
+            }
+
+            .footer-grid {
+
+                grid-template-columns:
+
+                    1fr 1fr;
+
+                gap:
+
+                    30px 20px;
+
+            }
+
+            .footer-brand {
+
+                grid-column:
+
+                    1 / -1;
+
+            }
+
+            .footer-bottom {
+
+                flex-direction:
+
+                    column;
+
+                text-align:
+
+                    center;
+
+            }
+
+        }
+
+        @media (max-width: 390px) {
+
+            .logo-text {
+
+                display:
+
+                    none;
+
+            }
+
+            .result-order-number {
+
+                font-size:
+
+                    16px;
+
+            }
+
+            .history-title {
+
+                font-size:
+
+                    23px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ========================================
+
+         HEADER
+
+    ========================================= -->
+
+    <header>
+
+        <div class="container header-inner">
+
+            <a
+
+                href="index.html"
+
+                class="logo"
+
+                aria-label="NINICE BOUTIQUE"
+
+            >
+
+                <div class="logo-mark">
+
+                    <svg
+
+                        viewBox="0 0 32 32"
+
+                        fill="none"
+
+                    >
+
+                        <path
+
+                            d="M8 24V8L24 24V8"
+
+                            stroke="currentColor"
+
+                            stroke-width="3"
+
+                            stroke-linecap="round"
+
+                            stroke-linejoin="round"
+
+                        />
+
+                    </svg>
+
+                </div>
+
+                <div class="logo-text">
+
+                    <strong>
+
+                        NINICE
+
+                    </strong>
+
+                    <span>
+
+                        BOUTIQUE
+
+                    </span>
+
+                </div>
+
+            </a>
+
+            <nav class="desktop-nav">
+
+                <a href="index.html">
+
+                    Accueil
+
+                </a>
+
+                <a href="boutique.html">
+
+                    Boutique
+
+                </a>
+
+                <a href="index.html#categories">
+
+                    Catégories
+
+                </a>
+
+                <a
+
+                    href="suivi.html"
+
+                    class="active"
+
+                >
+
+                    Suivre ma commande
+
+                </a>
+
+            </nav>
+
+            <div class="header-actions">
+
+                <a
+
+                    href="panier.html"
+
+                    class="icon-button"
+
+                    aria-label="Panier"
+
+                >
+
+                    <svg
+
+                        viewBox="0 0 24 24"
+
+                        fill="none"
+
+                        stroke="currentColor"
+
+                        stroke-width="1.8"
+
+                    >
+
+                        <path
+
+                            d="M6 8h12l1 12H5L6 8Z"
+
+                        />
+
+                        <path
+
+                            d="M9 8V6a3 3 0 0 1 6 0v2"
+
+                        />
+
+                    </svg>
+
+                    <span
+
+                        class="cart-count"
+
+                        data-cart-count
+
+                    >
+
+                        0
+
+                    </span>
+
+                </a>
+
+                <button
+
+                    class="icon-button menu-button"
+
+                    id="menuButton"
+
+                    aria-label="Ouvrir le menu"
+
+                >
+
+                    <svg
+
+                        viewBox="0 0 24 24"
+
+                        fill="none"
+
+                        stroke="currentColor"
+
+                        stroke-width="2"
+
+                    >
+
+                        <path d="M4 7h16" />
+
+                        <path d="M4 12h16" />
+
+                        <path d="M4 17h16" />
+
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ========================================
+
+         MOBILE MENU
+
+    ========================================= -->
+
+    <div
+
+        class="mobile-menu"
+
+        id="mobileMenu"
+
+    >
+
+        <div
+
+            class="mobile-overlay"
+
+            id="mobileOverlay"
+
+        ></div>
+
+        <aside class="mobile-panel">
+
+            <div class="mobile-menu-top">
+
+                <a
+
+                    href="index.html"
+
+                    class="logo"
+
+                >
+
+                    <div class="logo-mark">
+
+                        <svg
+
+                            viewBox="0 0 32 32"
+
+                            fill="none"
+
+                        >
+
+                            <path
+
+                                d="M8 24V8L24 24V8"
+
+                                stroke="currentColor"
+
+                                stroke-width="3"
+
+                                stroke-linecap="round"
+
+                                stroke-linejoin="round"
+
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <div class="logo-text">
+
+                        <strong>
+
+                            NINICE
+
+                        </strong>
+
+                        <span>
+
+                            BOUTIQUE
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+                <button
+
+                    class="icon-button"
+
+                    id="closeMenu"
+
+                    aria-label="Fermer le menu"
+
+                >
+
+                    <svg
+
+                        viewBox="0 0 24 24"
+
+                        fill="none"
+
+                        stroke="currentColor"
+
+                        stroke-width="1.8"
+
+                    >
+
+                        <path d="M6 6l12 12" />
+
+                        <path d="M18 6L6 18" />
+
+                    </svg>
+
+                </button>
+
+            </div>
+
+            <nav>
+
+                <a href="index.html">
+
+                    Accueil
+
+                </a>
+
+                <a href="boutique.html">
+
+                    Boutique
+
+                </a>
+
+                <a href="index.html#categories">
+
+                    Catégories
+
+                </a>
+
+                <a href="panier.html">
+
+                    Mon panier
+
+                </a>
+
+                <a
+
+                    href="suivi.html"
+
+                    class="active"
+
+                >
+
+                    Suivre ma commande
+
+                </a>
+
+            </nav>
+
+        </aside>
+
+    </div>
+
+    <!-- ========================================
+
+         PAGE HEADER
+
+    ========================================= -->
+
+    <section class="page-header">
+
+        <div class="container">
+
+            <div class="breadcrumb">
+
+                <a href="index.html">
+
+                    Accueil
+
+                </a>
+
+                <span>/</span>
+
+                <span>
+
+                    Suivre ma commande
+
+                </span>
+
+            </div>
+
+            <h1>
+
+                Suivre ma commande
+
+            </h1>
+
+            <p>
+
+                Consultez l'évolution de votre commande en quelques secondes.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================
+
+         MAIN
+
+    ========================================= -->
+
+    <main>
+
+        <section class="tracking-section">
+
+            <div class="container">
+
+                <div class="tracking-layout">
+
+                    <!-- SEARCH -->
+
+                    <div class="search-card">
+
+                        <h2>
+
+                            Retrouvez votre commande
+
+                        </h2>
+
+                        <p>
+
+                            Entrez votre numéro de commande et le numéro de téléphone utilisé lors de la commande.
+
+                        </p>
+
+                        <form
+
+                            id="trackingForm"
+
+                            novalidate
+
+                        >
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label
+
+                                        for="orderNumber"
+
+                                    >
+
+                                        Numéro de commande
+
+                                        <span>*</span>
+
+                                    </label>
+
+                                    <input
+
+                                        type="text"
+
+                                        id="orderNumber"
+
+                                        name="orderNumber"
+
+                                        placeholder="Ex : NB-2026-000001"
+
+                                        autocomplete="off"
+
+                                        required
+
+                                        maxlength="50"
+
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label
+
+                                        for="customerPhone"
+
+                                    >
+
+                                        Téléphone
+
+                                        <span>*</span>
+
+                                    </label>
+
+                                    <input
+
+                                        type="tel"
+
+                                        id="customerPhone"
+
+                                        name="customerPhone"
+
+                                        placeholder="Ex : 0700000000"
+
+                                        autocomplete="tel"
+
+                                        required
+
+                                        maxlength="30"
+
+                                    >
+
+                                </div>
+
+                            </div>
+
+                            <button
+
+                                type="submit"
+
+                                class="search-button"
+
+                                id="searchButton"
+
+                            >
+
+                                Rechercher ma commande
+
+                            </button>
+
+                            <div class="form-help">
+
+                                Vos informations sont utilisées uniquement pour retrouver votre commande.
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <!-- RESULT -->
+
+                    <div id="result"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ========================================
+
+         FOOTER
+
+    ========================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <a
+
+                        href="index.html"
+
+                        class="logo"
+
+                    >
+
+                        <div class="logo-mark">
+
+                            <svg
+
+                                viewBox="0 0 32 32"
+
+                                fill="none"
+
+                            >
+
+                                <path
+
+                                    d="M8 24V8L24 24V8"
+
+                                    stroke="currentColor"
+
+                                    stroke-width="3"
+
+                                    stroke-linecap="round"
+
+                                    stroke-linejoin="round"
+
+                                />
+
+                            </svg>
+
+                        </div>
+
+                        <div class="logo-text">
+
+                            <strong
+
+                                style="color:white;"
+
+                            >
+
+                                NINICE
+
+                            </strong>
+
+                            <span>
+
+                                BOUTIQUE
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <p>
+
+                        Une boutique dédiée à la mode féminine,
+
+                        avec une sélection élégante et accessible.
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <div class="footer-title">
+
+                        Boutique
+
+                    </div>
+
+                    <div class="footer-links">
+
+                        <a href="boutique.html">
+
+                            Tous les produits
+
+                        </a>
+
+                        <a href="index.html#categories">
+
+                            Catégories
+
+                        </a>
+
+                        <a href="panier.html">
+
+                            Mon panier
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="footer-title">
+
+                        Service
+
+                    </div>
+
+                    <div class="footer-links">
+
+                        <a href="suivi.html">
+
+                            Suivre ma commande
+
+                        </a>
+
+                        <a href="commande.html">
+
+                            Commander
+
+                        </a>
+
+                        <a href="index.html#contact">
+
+                            Contact
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="footer-title">
+
+                        NINICE
+
+                    </div>
+
+                    <div class="footer-links">
+
+                        <a href="index.html">
+
+                            À propos
+
+                        </a>
+
+                        <a href="index.html#categories">
+
+                            Nos catégories
+
+                        </a>
+
+                        <a href="index.html">
+
+                            Accueil
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <span>
+
+                    ©
+
+                    <span id="currentYear"></span>
+
+                    NINICE BOUTIQUE.
+
+                    Tous droits réservés.
+
+                </span>
+
+                <span>
+
+                    Bouaké, Côte d'Ivoire
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ========================================
+
+         MOBILE BOTTOM NAV
+
+    ========================================= -->
+
+    <nav class="bottom-nav">
+
+        <a href="index.html">
+
+            <svg
+
+                viewBox="0 0 24 24"
+
+                fill="none"
+
+                stroke="currentColor"
+
+                stroke-width="1.8"
+
+            >
+
+                <path
+
+                    d="M3 11.5L12 4l9 7.5"
+
+                />
+
+                <path
+
+                    d="M5.5 10v10h13V10"
+
+                />
+
+            </svg>
+
+            <span>
+
+                Accueil
+
+            </span>
+
+        </a>
+
+        <a href="boutique.html">
+
+            <svg
+
+                viewBox="0 0 24 24"
+
+                fill="none"
+
+                stroke="currentColor"
+
+                stroke-width="1.8"
+
+            >
+
+                <rect
+
+                    x="4"
+
+                    y="4"
+
+                    width="6"
+
+                    height="6"
+
+                    rx="1"
+
+                />
+
+                <rect
+
+                    x="14"
+
+                    y="4"
+
+                    width="6"
+
+                    height="6"
+
+                    rx="1"
+
+                />
+
+                <rect
+
+                    x="4"
+
+                    y="14"
+
+                    width="6"
+
+                    height="6"
+
+                    rx="1"
+
+                />
+
+                <rect
+
+                    x="14"
+
+                    y="14"
+
+                    width="6"
+
+                    height="6"
+
+                    rx="1"
+
+                />
+
+            </svg>
+
+            <span>
+
+                Catégories
+
+            </span>
+
+        </a>
+
+        <a href="panier.html">
+
+            <svg
+
+                viewBox="0 0 24 24"
+
+                fill="none"
+
+                stroke="currentColor"
+
+                stroke-width="1.8"
+
+            >
+
+                <path
+
+                    d="M6 8h12l1 12H5L6 8Z"
+
+                />
+
+                <path
+
+                    d="M9 8V6a3 3 0 0 1 6 0v2"
+
+                />
+
+            </svg>
+
+            <span>
+
+                Panier
+
+            </span>
+
+        </a>
+
+    </nav>
+
+    <!-- ========================================
+
+         TOAST
+
+    ========================================= -->
+
+    <div
+
+        class="toast"
+
+        id="toast"
+
+    ></div>
+
+    <script>
+
+        /* ========================================
+
+           SUPABASE
+
+        ========================================= */
+
+        const SUPABASE_URL =
+
+            "https://etgkyndycareboaurrtx.supabase.co";
+
+        const SUPABASE_ANON_KEY =
+
+            "sb_publishable_aP15ikBeGVbVb5VxzOeBlw_BVytxavt";
+
+        /* ========================================
+
+           DOM
+
+        ======================================== */
+
+        const trackingForm =
+
+            document.getElementById(
+
+                "trackingForm"
+
+            );
+
+        const orderNumberInput =
+
+            document.getElementById(
+
+                "orderNumber"
+
+            );
+
+        const phoneInput =
+
+            document.getElementById(
+
+                "customerPhone"
+
+            );
+
+        const searchButton =
+
+            document.getElementById(
+
+                "searchButton"
+
+            );
+
+        const result =
+
+            document.getElementById(
+
+                "result"
+
+            );
+
+        const toast =
+
+            document.getElementById(
+
+                "toast"
+
+            );
+
+        /* ========================================
+
+           UTILS
+
+        ======================================== */
+
+        function escapeHTML(
+
+            value
+
+        ) {
+
+            if (
+
+                value === null ||
+
+                value === undefined
+
+            ) {
+
+                return "";
+
+            }
+
+            return String(value)
+
+                .replace(
+
+                    /&/g,
+
+                    "&amp;"
+
+                )
+
+                .replace(
+
+                    /</g,
+
+                    "&lt;"
+
+                )
+
+                .replace(
+
+                    />/g,
+
+                    "&gt;"
+
+                )
+
+                .replace(
+
+                    /"/g,
+
+                    "&quot;"
+
+                )
+
+                .replace(
+
+                    /'/g,
+
+                    "&#039;"
+
+                );
+
+        }
+
+        function updateCartCount() {
+
+            let cart = [];
+
+            try {
+
+                cart =
+
+                    JSON.parse(
+
+                        localStorage.getItem(
+
+                            "ninice_cart"
+
+                        ) || "[]"
+
+                    );
+
+            } catch {
+
+                cart = [];
+
+            }
+
+            const count =
+
+                Array.isArray(cart)
+
+                    ? cart.reduce(
+
+                        (
+
+                            total,
+
+                            item
+
+                        ) =>
+
+                            total +
+
+                            Number(
+
+                                item.quantity || 0
+
+                            ),
+
+                        0
+
+                    )
+
+                    : 0;
+
+            document
+
+                .querySelectorAll(
+
+                    "[data-cart-count]"
+
+                )
+
+                .forEach(
+
+                    element => {
+
+                        element.textContent =
+
+                            count;
+
+                    }
+
+                );
+
+        }
+
+        function showToast(
+
+            message
+
+        ) {
+
+            toast.textContent =
+
+                message;
+
+            toast.classList.add(
+
+                "show"
+
+            );
+
+            clearTimeout(
+
+                window.toastTimer
+
+            );
+
+            window.toastTimer =
+
+                setTimeout(
+
+                    () => {
+
+                        toast.classList.remove(
+
+                            "show"
+
+                        );
+
+                    },
+
+                    2800
+
+                );
+
+        }
+
+        function formatDate(
+
+            value
+
+        ) {
+
+            if (!value) {
+
+                return "";
+
+            }
+
+            const date =
+
+                new Date(value);
+
+            if (
+
+                Number.isNaN(
+
+                    date.getTime()
+
+                )
+
+            ) {
+
+                return "";
+
+            }
+
+            return new Intl.DateTimeFormat(
+
+                "fr-FR",
+
+                {
+
+                    dateStyle:
+
+                        "medium",
+
+                    timeStyle:
+
+                        "short"
+
+                }
+
+            ).format(date);
+
+        }
+
+        /* ========================================
+
+           SUPABASE REQUEST
+
+        ======================================== */
+
+        async function supabaseRequest(
+
+            endpoint,
+
+            options = {}
+
+        ) {
+
+            const response =
+
+                await fetch(
+
+                    `${SUPABASE_URL}/rest/v1/${endpoint}`,
+
+                    {
+
+                        ...options,
+
+                        headers: {
+
+                            "apikey":
+
+                                SUPABASE_ANON_KEY,
+
+                            "Authorization":
+
+                                `Bearer ${SUPABASE_ANON_KEY}`,
+
+                            "Content-Type":
+
+                                "application/json",
+
+                            ...(options.headers || {})
+
+                        }
+
+                    }
+
+                );
+
+            const text =
+
+                await response.text();
+
+            let data = null;
+
+            try {
+
+                data =
+
+                    text
+
+                        ? JSON.parse(text)
+
+                        : null;
+
+            } catch {
+
+                data = text;
+
+            }
+
+            if (!response.ok) {
+
+                throw new Error(
+
+                    data?.message ||
+
+                    data?.hint ||
+
+                    "Impossible de récupérer la commande."
+
+                );
+
+            }
+
+            return data;
+
+        }
+
+        /* ========================================
+
+           STATUS
+
+        ======================================== */
+
+        const STATUS_CONFIG = {
+
+            pending: {
+
+                label:
+
+                    "En attente",
+
+                index:
+
+                    0
+
+            },
+
+            confirmed: {
+
+                label:
+
+                    "Confirmée",
+
+                index:
+
+                    1
+
+            },
+
+            preparing: {
+
+                label:
+
+                    "En préparation",
+
+                index:
+
+                    2
+
+            },
+
+            shipping: {
+
+                label:
+
+                    "En livraison",
+
+                index:
+
+                    3
+
+            },
+
+            delivered: {
+
+                label:
+
+                    "Livrée",
+
+                index:
+
+                    4
+
+            },
+
+            cancelled: {
+
+                label:
+
+                    "Annulée",
+
+                index:
+
+                    -1
+
+            }
+
+        };
+
+        const PROGRESS_STEPS = [
+
+            {
+
+                key:
+
+                    "pending",
+
+                label:
+
+                    "Commande reçue"
+
+            },
+
+            {
+
+                key:
+
+                    "confirmed",
+
+                label:
+
+                    "Confirmée"
+
+            },
+
+            {
+
+                key:
+
+                    "preparing",
+
+                label:
+
+                    "Préparation"
+
+            },
+
+            {
+
+                key:
+
+                    "shipping",
+
+                label:
+
+                    "Livraison"
+
+            },
+
+            {
+
+                key:
+
+                    "delivered",
+
+                label:
+
+                    "Livrée"
+
+            }
+
+        ];
+
+        /* ========================================
+
+           SEARCH ORDER
+
+        ======================================== */
+
+        async function searchOrder(
+
+            orderNumber,
+
+            phone
+
+        ) {
+
+            const params =
+
+                new URLSearchParams();
+
+            params.set(
+
+                "p_order_number",
+
+                orderNumber
+
+            );
+
+            params.set(
+
+                "p_customer_phone",
+
+                phone
+
+            );
+
+            return await supabaseRequest(
+
+                `rpc/get_order_tracking?${params.toString()}`
+
+            );
+
+        }
+
+        /* ========================================
+
+           RENDER ERROR
+
+        ======================================== */
+
+        function renderError(
+
+            message
+
+        ) {
+
+            result.innerHTML = `
+
+                <div class="error-card">
+
+                    <strong>
+
+                        Commande introuvable
+
+                    </strong>
+
+                    <p>
+
+                        ${escapeHTML(message)}
+
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+        /* ========================================
+
+           RENDER RESULT
+
+        ======================================== */
+
+        function renderOrder(
+
+            data
+
+        ) {
+
+            if (
+
+                !data ||
+
+                data.success !== true
+
+            ) {
+
+                renderError(
+
+                    data?.message ||
+
+                    "Vérifiez votre numéro de commande et votre téléphone."
+
+                );
+
+                return;
+
+            }
+
+            const status =
+
+                data.status ||
+
+                "pending";
+
+            const statusConfig =
+
+                STATUS_CONFIG[
+
+                    status
+
+                ] ||
+
+                STATUS_CONFIG.pending;
+
+            const tracking =
+
+                Array.isArray(
+
+                    data.tracking
+
+                )
+
+                    ? data.tracking
+
+                    : [];
+
+            const currentIndex =
+
+                statusConfig.index;
+
+            let progressWidth =
+
+                0;
+
+            if (
+
+                status === "cancelled"
+
+            ) {
+
+                progressWidth = 0;
+
+            } else if (
+
+                currentIndex >= 0
+
+            ) {
+
+                progressWidth =
+
+                    (
+
+                        currentIndex /
+
+                        4
+
+                    ) *
+
+                    80;
+
+            }
+
+            const stepsHTML =
+
+                PROGRESS_STEPS
+
+                    .map(
+
+                        (
+
+                            step,
+
+                            index
+
+                        ) => {
+
+                            const completed =
+
+                                status !==
+
+                                    "cancelled" &&
+
+                                index <
+
+                                    currentIndex;
+
+                            const current =
+
+                                status !==
+
+                                    "cancelled" &&
+
+                                index ===
+
+                                    currentIndex;
+
+                            return `
+
+                                <div
+
+                                    class="
+
+                                        progress-step
+
+                                        ${completed ? "completed" : ""}
+
+                                        ${current ? "current" : ""}
+
+                                    "
+
+                                >
+
+                                    <div class="step-circle">
+
+                                        ${
+
+                                            completed
+
+                                                ? "✓"
+
+                                                : index + 1
+
+                                        }
+
+                                    </div>
+
+                                    <div class="step-label">
+
+                                        ${step.label}
+
+                                    </div>
+
+                                </div>
+
+                            `;
+
+                        }
+
+                    )
+
+                    .join("");
+
+            const historyHTML =
+
+                tracking.length
+
+                    ? tracking
+
+                        .slice()
+
+                        .reverse()
+
+                        .map(
+
+                            item => `
+
+                                <div
+
+                                    class="timeline-item"
+
+                                >
+
+                                    <div
+
+                                        class="timeline-marker"
+
+                                    >
+
+                                        <svg
+
+                                            viewBox="0 0 24 24"
+
+                                            fill="none"
+
+                                            stroke="currentColor"
+
+                                            stroke-width="2"
+
+                                        >
+
+                                            <path
+
+                                                d="M5 12.5l4 4L19 7"
+
+                                            />
+
+                                        </svg>
+
+                                    </div>
+
+                                    <div
+
+                                        class="timeline-content"
+
+                                    >
+
+                                        <div
+
+                                            class="timeline-status"
+
+                                        >
+
+                                            ${escapeHTML(
+
+                                                STATUS_CONFIG[
+
+                                                    item.status
+
+                                                ]?.label ||
+
+                                                item.status ||
+
+                                                "Mise à jour"
+
+                                            )}
+
+                                        </div>
+
+                                        <div
+
+                                            class="timeline-message"
+
+                                        >
+
+                                            ${escapeHTML(
+
+                                                item.message ||
+
+                                                ""
+
+                                            )}
+
+                                        </div>
+
+                                        <div
+
+                                            class="timeline-date"
+
+                                        >
+
+                                            ${formatDate(
+
+                                                item.created_at
+
+                                            )}
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            `
+
+                        )
+
+                        .join("")
+
+                    : `
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-marker">
+
+                                <svg
+
+                                    viewBox="0 0 24 24"
+
+                                    fill="none"
+
+                                    stroke="currentColor"
+
+                                    stroke-width="2"
+
+                                >
+
+                                    <path
+
+                                        d="M5 12.5l4 4L19 7"
+
+                                    />
+
+                                </svg>
+
+                            </div>
+
+                            <div class="timeline-content">
+
+                                <div class="timeline-status">
+
+                                    Commande reçue
+
+                                </div>
+
+                                <div class="timeline-message">
+
+                                    Votre commande a bien été enregistrée.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+            result.innerHTML = `
+
+                <div class="result-card">
+
+                    <div class="result-header">
+
+                        <div>
+
+                            <div class="result-header-label">
+
+                                Numéro de commande
+
+                            </div>
+
+                            <div class="result-order-number">
+
+                                ${escapeHTML(
+
+                                    data.order_number ||
+
+                                    ""
+
+                                )}
+
+                            </div>
+
+                            ${
+
+                                data.created_at
+
+                                    ? `
+
+                                        <div
+
+                                            style="
+
+                                                color:#99939f;
+
+                                                font-size:10px;
+
+                                                margin-top:4px;
+
+                                            "
+
+                                        >
+
+                                            Commande créée le
+
+                                            ${formatDate(
+
+                                                data.created_at
+
+                                            )}
+
+                                        </div>
+
+                                    `
+
+                                    : ""
+
+                            }
+
+                        </div>
+
+                        <div
+
+                            class="
+
+                                status-badge
+
+                                ${escapeHTML(status)}
+
+                            "
+
+                        >
+
+                            ${escapeHTML(
+
+                                statusConfig.label
+
+                            )}
+
+                        </div>
+
+                    </div>
+
+                    ${
+
+                        status === "cancelled"
+
+                            ? `
+
+                                <div
+
+                                    style="
+
+                                        padding:20px 28px;
+
+                                        background:#fff8f8;
+
+                                        border-bottom:1px solid var(--border);
+
+                                        color:#9b5b5b;
+
+                                        font-size:12px;
+
+                                    "
+
+                                >
+
+                                    Cette commande a été annulée.
+
+                                </div>
+
+                            `
+
+                            : `
+
+                                <div class="status-progress">
+
+                                    <div
+
+                                        class="progress-line"
+
+                                    >
+
+                                        <div
+
+                                            class="progress-fill"
+
+                                            style="
+
+                                                width:${progressWidth}%;
+
+                                            "
+
+                                        ></div>
+
+                                        ${stepsHTML}
+
+                                    </div>
+
+                                </div>
+
+                            `
+
+                    }
+
+                    <div class="history">
+
+                        <h2 class="history-title">
+
+                            Historique de la commande
+
+                        </h2>
+
+                        <div class="timeline">
+
+                            ${historyHTML}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+            setTimeout(
+
+                () => {
+
+                    result.scrollIntoView(
+
+                        {
+
+                            behavior:
+
+                                "smooth",
+
+                            block:
+
+                                "start"
+
+                        }
+
+                    );
+
+                },
+
+                100
+
+            );
+
+        }
+
+        /* ========================================
+
+           FORM SUBMIT
+
+        ======================================== */
+
+        trackingForm.addEventListener(
+
+            "submit",
+
+            async event => {
+
+                event.preventDefault();
+
+                const orderNumber =
+
+                    orderNumberInput
+
+                        .value
+
+                        .trim()
+
+                        .toUpperCase();
+
+                const phone =
+
+                    phoneInput
+
+                        .value
+
+                        .trim();
+
+                if (
+
+                    !orderNumber ||
+
+                    !phone
+
+                ) {
+
+                    renderError(
+
+                        "Veuillez renseigner votre numéro de commande et votre téléphone."
+
+                    );
+
+                    return;
+
+                }
+
+                searchButton.disabled =
+
+                    true;
+
+                searchButton.textContent =
+
+                    "Recherche en cours...";
+
+                result.innerHTML = `
+
+                    <div
+
+                        class="search-card"
+
+                        style="
+
+                            text-align:center;
+
+                            color:var(--muted);
+
+                            font-size:13px;
+
+                        "
+
+                    >
+
+                        Recherche de votre commande...
+
+                    </div>
+
+                `;
+
+                try {
+
+                    const data =
+
+                        await searchOrder(
+
+                            orderNumber,
+
+                            phone
+
+                        );
+
+                    renderOrder(
+
+                        data
+
+                    );
+
+                } catch (error) {
+
+                    console.error(
+
+                        error
+
+                    );
+
+                    renderError(
+
+                        "Impossible de rechercher la commande pour le moment. Vérifiez vos informations et réessayez."
+
+                    );
+
+                } finally {
+
+                    searchButton.disabled =
+
+                        false;
+
+                    searchButton.textContent =
+
+                        "Rechercher ma commande";
+
+                }
+
+            }
+
+        );
+
+        /* ========================================
+
+           URL PARAMETER
+
+        ======================================== */
+
+        function loadOrderFromURL() {
+
+            const params =
+
+                new URLSearchParams(
+
+                    window.location.search
+
+                );
+
+            const orderNumber =
+
+                params.get(
+
+                    "commande"
+
+                );
+
+            if (!orderNumber) {
+
+                return;
+
+            }
+
+            orderNumberInput.value =
+
+                orderNumber
+
+                    .trim()
+
+                    .toUpperCase();
+
+            phoneInput.focus();
+
+        }
+
+        /* ========================================
+
+           MOBILE MENU
+
+        ======================================== */
+
+        const mobileMenu =
+
+            document.getElementById(
+
+                "mobileMenu"
+
+            );
+
+        const menuButton =
+
+            document.getElementById(
+
+                "menuButton"
+
+            );
+
+        const closeMenu =
+
+            document.getElementById(
+
+                "closeMenu"
+
+            );
+
+        const mobileOverlay =
+
+            document.getElementById(
+
+                "mobileOverlay"
+
+            );
+
+        function openMobileMenu() {
+
+            mobileMenu.classList.add(
+
+                "open"
+
+            );
+
+            document.body.classList.add(
+
+                "no-scroll"
+
+            );
+
+        }
+
+        function closeMobileMenu() {
+
+            mobileMenu.classList.remove(
+
+                "open"
+
+            );
+
+            document.body.classList.remove(
+
+                "no-scroll"
+
+            );
+
+        }
+
+        menuButton.addEventListener(
+
+            "click",
+
+            openMobileMenu
+
+        );
+
+        closeMenu.addEventListener(
+
+            "click",
+
+            closeMobileMenu
+
+        );
+
+        mobileOverlay.addEventListener(
+
+            "click",
+
+            closeMobileMenu
+
+        );
+
+        document
+
+            .querySelectorAll(
+
+                ".mobile-panel a"
+
+            )
+
+            .forEach(
+
+                link => {
+
+                    link.addEventListener(
+
+                        "click",
+
+                        closeMobileMenu
+
+                    );
+
+                }
+
+            );
+
+        document.addEventListener(
+
+            "keydown",
+
+            event => {
+
+                if (
+
+                    event.key === "Escape"
+
+                ) {
+
+                    closeMobileMenu();
+
+                }
+
+            }
+
+        );
+
+        /* ========================================
+
+           YEAR
+
+        ======================================== */
+
+        document.getElementById(
+
+            "currentYear"
+
+        ).textContent =
+
+            new Date().getFullYear();
+
+        /* ========================================
+
+           START
+
+        ======================================== */
+
+        updateCartCount();
+
+        loadOrderFromURL();
+
+    </script>
+
+</body>
+
+</html>
